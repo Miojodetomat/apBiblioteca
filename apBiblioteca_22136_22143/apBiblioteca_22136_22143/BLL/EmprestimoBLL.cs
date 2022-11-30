@@ -36,6 +36,22 @@ namespace BLL
             }
             return tb;
         }
+
+        public DataTable SelecionarEmprestimosPorLeitor(int idLeitor)
+        {
+            DataTable tb = new DataTable();
+            try
+            {
+                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                tb = dal.SelectEmprestimosByLeitor(idLeitor);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return tb;
+        }
+
         public void IncluirEmprestimo(Emprestimo emprestimo)
         {
             try
