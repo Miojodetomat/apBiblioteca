@@ -64,6 +64,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public void AlterarEmprestimo(Emprestimo emprestimo)
         {
             try
@@ -76,6 +77,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public void ExcluirEmprestimo(Emprestimo emprestimo)
         {
             try
@@ -88,6 +90,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public List<Emprestimo> ListarEmprestimos()
         {
             try
@@ -100,6 +103,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public Emprestimo ListarEmprestimoPorId(int id)
         {
             try

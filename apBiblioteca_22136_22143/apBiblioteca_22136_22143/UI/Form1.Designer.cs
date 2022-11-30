@@ -37,7 +37,7 @@
             this.nãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empréstimosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emprestimosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devoluçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatótiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +63,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(352, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(379, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -113,32 +113,33 @@
             // nãoToolStripMenuItem
             // 
             this.nãoToolStripMenuItem.Name = "nãoToolStripMenuItem";
-            this.nãoToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.nãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nãoToolStripMenuItem.Text = "Não";
             // 
             // simToolStripMenuItem
             // 
             this.simToolStripMenuItem.Name = "simToolStripMenuItem";
-            this.simToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.simToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.simToolStripMenuItem.Text = "Sim";
             this.simToolStripMenuItem.Click += new System.EventHandler(this.simToolStripMenuItem1_Click);
             // 
             // operaçõesToolStripMenuItem
             // 
             this.operaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empréstimosToolStripMenuItem,
+            this.emprestimosToolStripMenuItem,
             this.devoluçõesToolStripMenuItem});
             this.operaçõesToolStripMenuItem.Name = "operaçõesToolStripMenuItem";
             this.operaçõesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.operaçõesToolStripMenuItem.Text = "&Operações";
             // 
-            // empréstimosToolStripMenuItem
+            // emprestimosToolStripMenuItem
             // 
-            this.empréstimosToolStripMenuItem.Name = "empréstimosToolStripMenuItem";
-            this.empréstimosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.emprestimosToolStripMenuItem.Name = "emprestimosToolStripMenuItem";
+            this.emprestimosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.E)));
-            this.empréstimosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.empréstimosToolStripMenuItem.Text = "Empréstimos";
+            this.emprestimosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.emprestimosToolStripMenuItem.Text = "Empréstimos";
+            this.emprestimosToolStripMenuItem.Click += new System.EventHandler(this.emprestimosToolStripMenuItem_Click);
             // 
             // devoluçõesToolStripMenuItem
             // 
@@ -166,20 +167,20 @@
             // nÃOToolStripMenuItem1
             // 
             this.nÃOToolStripMenuItem1.Name = "nÃOToolStripMenuItem1";
-            this.nÃOToolStripMenuItem1.Size = new System.Drawing.Size(96, 22);
+            this.nÃOToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.nÃOToolStripMenuItem1.Text = "Não";
             // 
             // simToolStripMenuItem1
             // 
             this.simToolStripMenuItem1.Name = "simToolStripMenuItem1";
-            this.simToolStripMenuItem1.Size = new System.Drawing.Size(96, 22);
+            this.simToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.simToolStripMenuItem1.Text = "Sim";
             this.simToolStripMenuItem1.Click += new System.EventHandler(this.simToolStripMenuItem1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 41);
+            this.label1.Location = new System.Drawing.Point(25, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 1;
@@ -188,7 +189,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 70);
+            this.label2.Location = new System.Drawing.Point(86, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 2;
@@ -197,7 +198,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 105);
+            this.label3.Location = new System.Drawing.Point(94, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 3;
@@ -205,21 +206,21 @@
             // 
             // txtBanco
             // 
-            this.txtBanco.Location = new System.Drawing.Point(136, 38);
+            this.txtBanco.Location = new System.Drawing.Point(155, 37);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(164, 26);
             this.txtBanco.TabIndex = 4;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(136, 70);
+            this.txtUsuario.Location = new System.Drawing.Point(155, 69);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(164, 26);
             this.txtUsuario.TabIndex = 5;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(136, 102);
+            this.txtSenha.Location = new System.Drawing.Point(155, 101);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(164, 26);
@@ -236,7 +237,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 149);
+            this.groupBox1.Size = new System.Drawing.Size(356, 151);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conexão";
@@ -244,7 +245,7 @@
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(352, 206);
+            this.ClientSize = new System.Drawing.Size(379, 200);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -282,7 +283,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ToolStripMenuItem empréstimosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emprestimosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem devoluçõesToolStripMenuItem;
     }
 }

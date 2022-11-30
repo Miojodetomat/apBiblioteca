@@ -16,9 +16,8 @@ namespace DAL
 
         public EmprestimoDAL(string banco, string usuario, string senha)
         {
-            _conexaoSQLServer =
-               $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
-               $"User id={usuario}; Password={senha}";
+            _conexaoSQLServer = $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
+                                $"User id={usuario}; Password={senha}";
         }
 
         public List<Emprestimo> SelectListEmprestimos()
@@ -61,7 +60,9 @@ namespace DAL
         {
             try
             {
-                String sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal FROM bibEmprestimo";
+                String sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal " +
+                             "FROM bibEmprestimo";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -80,8 +81,10 @@ namespace DAL
         {
             try
             {
-                String sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal FROM bibEmprestimo " +
-                    "Where idLeitor = @id";
+                String sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal " +
+                             "FROM bibEmprestimo " +
+                             "Where idLeitor = @id";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idLeitor);
@@ -102,7 +105,8 @@ namespace DAL
             try
             {
                 String sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal " +
-                " FROM bibEmprestimo WHERE idEmprestimo = @id";
+                             " FROM bibEmprestimo WHERE idEmprestimo = @id";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
@@ -110,6 +114,7 @@ namespace DAL
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 Emprestimo emprestimo = null;
+
                 if (dr.Read())
                 {
                     emprestimo = new Emprestimo(
@@ -133,8 +138,9 @@ namespace DAL
             try
             {
                 String sql = "INSERT INTO bibEmprestimo " +
-                " (idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal) " +
-               " VALUES (@idLiv,@, @idLei, @dE, @dDP, @dDR) ";
+                             " (idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal) " +
+                             " VALUES (@idLiv,@, @idLei, @dE, @dDP, @dDR) ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLiv", qualEmprestimo.IdLivro);
@@ -160,6 +166,7 @@ namespace DAL
             try
             {
                 String sql = "DELETE FROM bibEmprestimo WHERE idEmprestimo = @idEmprestimo ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idEmprestimo", qualEmprestimo.IdEmprestimo);
@@ -181,12 +188,13 @@ namespace DAL
             try
             {
                 String sql = "UPDATE bibEmprestimo " +
-                " SET idLeitor= @idLei ," +
-               " idLivro=@idLiv," +
-               " dataEmprestimo=@dE, " +
-               " dataDevolucaoPrevista=@dDP, " +
-               " dataDevolucaoReal=@dDR" +
-               " WHERE idEmprestimo = @idEmprestimo ";
+                             " SET idLeitor= @idLei ," +
+                             " idLivro=@idLiv," +
+                             " dataEmprestimo=@dE, " +
+                             " dataDevolucaoPrevista=@dDP, " +
+                             " dataDevolucaoReal=@dDR" +
+                             " WHERE idEmprestimo = @idEmprestimo ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLei", qualEmprestimo.IdLeitor);

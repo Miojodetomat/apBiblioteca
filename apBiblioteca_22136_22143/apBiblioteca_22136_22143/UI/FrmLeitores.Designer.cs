@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpCadastroLeitores = new System.Windows.Forms.TabPage();
+            this.btnProcurar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnExibir = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.telefoneLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnProcurar = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tpCadastroLeitores.SuspendLayout();
             this.tpListaLeitores.SuspendLayout();
@@ -96,49 +96,64 @@
             this.tpCadastroLeitores.Text = "Cadastro";
             this.tpCadastroLeitores.UseVisualStyleBackColor = true;
             // 
+            // btnProcurar
+            // 
+            this.btnProcurar.BackColor = System.Drawing.Color.Silver;
+            this.btnProcurar.Location = new System.Drawing.Point(478, 29);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(77, 35);
+            this.btnProcurar.TabIndex = 15;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
+            // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(240, 232);
+            this.btnAlterar.BackColor = System.Drawing.Color.Silver;
+            this.btnAlterar.Location = new System.Drawing.Point(233, 246);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(79, 31);
+            this.btnAlterar.Size = new System.Drawing.Size(77, 35);
             this.btnAlterar.TabIndex = 14;
             this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(360, 232);
+            this.btnExcluir.BackColor = System.Drawing.Color.Silver;
+            this.btnExcluir.Location = new System.Drawing.Point(353, 246);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 31);
+            this.btnExcluir.Size = new System.Drawing.Size(77, 35);
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnExibir
             // 
-            this.btnExibir.Location = new System.Drawing.Point(484, 232);
+            this.btnExibir.BackColor = System.Drawing.Color.Silver;
+            this.btnExibir.Location = new System.Drawing.Point(477, 246);
             this.btnExibir.Name = "btnExibir";
-            this.btnExibir.Size = new System.Drawing.Size(80, 31);
+            this.btnExibir.Size = new System.Drawing.Size(77, 35);
             this.btnExibir.TabIndex = 12;
             this.btnExibir.Text = "Exibir";
-            this.btnExibir.UseVisualStyleBackColor = true;
+            this.btnExibir.UseVisualStyleBackColor = false;
             this.btnExibir.Click += new System.EventHandler(this.btnExibir_Click);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(112, 232);
+            this.btnNovo.BackColor = System.Drawing.Color.Silver;
+            this.btnNovo.Location = new System.Drawing.Point(105, 246);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(82, 31);
+            this.btnNovo.Size = new System.Drawing.Size(77, 35);
             this.btnNovo.TabIndex = 10;
             this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // txtNomeLeitor
             // 
-            this.txtNomeLeitor.Location = new System.Drawing.Point(155, 75);
+            this.txtNomeLeitor.Location = new System.Drawing.Point(157, 70);
             this.txtNomeLeitor.MaxLength = 10;
             this.txtNomeLeitor.Name = "txtNomeLeitor";
             this.txtNomeLeitor.Size = new System.Drawing.Size(222, 26);
@@ -146,7 +161,7 @@
             // 
             // txtTelefoneLeitor
             // 
-            this.txtTelefoneLeitor.Location = new System.Drawing.Point(155, 107);
+            this.txtTelefoneLeitor.Location = new System.Drawing.Point(157, 111);
             this.txtTelefoneLeitor.MaxLength = 20;
             this.txtTelefoneLeitor.Name = "txtTelefoneLeitor";
             this.txtTelefoneLeitor.Size = new System.Drawing.Size(222, 26);
@@ -154,7 +169,7 @@
             // 
             // txtEmailLeitor
             // 
-            this.txtEmailLeitor.Location = new System.Drawing.Point(155, 141);
+            this.txtEmailLeitor.Location = new System.Drawing.Point(157, 152);
             this.txtEmailLeitor.MaxLength = 50;
             this.txtEmailLeitor.Name = "txtEmailLeitor";
             this.txtEmailLeitor.Size = new System.Drawing.Size(222, 26);
@@ -162,7 +177,7 @@
             // 
             // txtEnderecoLeitor
             // 
-            this.txtEnderecoLeitor.Location = new System.Drawing.Point(155, 173);
+            this.txtEnderecoLeitor.Location = new System.Drawing.Point(157, 193);
             this.txtEnderecoLeitor.MaxLength = 100;
             this.txtEnderecoLeitor.Name = "txtEnderecoLeitor";
             this.txtEnderecoLeitor.Size = new System.Drawing.Size(438, 26);
@@ -170,7 +185,7 @@
             // 
             // txtIdLeitor
             // 
-            this.txtIdLeitor.Location = new System.Drawing.Point(155, 43);
+            this.txtIdLeitor.Location = new System.Drawing.Point(157, 29);
             this.txtIdLeitor.Name = "txtIdLeitor";
             this.txtIdLeitor.ReadOnly = true;
             this.txtIdLeitor.Size = new System.Drawing.Size(100, 26);
@@ -179,7 +194,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(90, 74);
+            this.label5.Location = new System.Drawing.Point(83, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 4;
@@ -188,7 +203,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 107);
+            this.label4.Location = new System.Drawing.Point(63, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 3;
@@ -197,7 +212,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 140);
+            this.label3.Location = new System.Drawing.Point(81, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 2;
@@ -206,7 +221,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 173);
+            this.label2.Location = new System.Drawing.Point(56, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 1;
@@ -215,7 +230,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 46);
+            this.label1.Location = new System.Drawing.Point(34, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 0;
@@ -243,7 +258,7 @@
             this.enderecoLeitor});
             this.dgvListaLeitores.Location = new System.Drawing.Point(6, 6);
             this.dgvListaLeitores.Name = "dgvListaLeitores";
-            this.dgvListaLeitores.Size = new System.Drawing.Size(630, 292);
+            this.dgvListaLeitores.Size = new System.Drawing.Size(633, 292);
             this.dgvListaLeitores.TabIndex = 0;
             // 
             // idLeitor
@@ -251,13 +266,13 @@
             this.idLeitor.HeaderText = "Identificação";
             this.idLeitor.Name = "idLeitor";
             this.idLeitor.ReadOnly = true;
+            this.idLeitor.Width = 105;
             // 
             // nomeLeitor
             // 
             this.nomeLeitor.HeaderText = "Nome";
             this.nomeLeitor.MaxInputLength = 10;
             this.nomeLeitor.Name = "nomeLeitor";
-            this.nomeLeitor.Width = 90;
             // 
             // telefoneLeitor
             // 
@@ -279,16 +294,6 @@
             this.enderecoLeitor.MaxInputLength = 100;
             this.enderecoLeitor.Name = "enderecoLeitor";
             this.enderecoLeitor.Width = 150;
-            // 
-            // btnProcurar
-            // 
-            this.btnProcurar.Location = new System.Drawing.Point(383, 72);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(88, 32);
-            this.btnProcurar.TabIndex = 15;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
-            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // FrmLeitores
             // 
@@ -327,11 +332,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tpListaLeitores;
         private System.Windows.Forms.DataGridView dgvListaLeitores;
+        private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLeitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeLeitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneLeitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailLeitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn enderecoLeitor;
-        private System.Windows.Forms.Button btnProcurar;
     }
 }

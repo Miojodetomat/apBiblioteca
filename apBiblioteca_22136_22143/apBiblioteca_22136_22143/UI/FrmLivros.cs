@@ -22,6 +22,7 @@ namespace apBiblioteca_22136_22143.UI
             livro.CodigoLivro = txtCodigoLivro.Text;
             livro.TituloLivro = txtTituloLivro.Text;
             livro.AutorLivro = txtAutorLivro.Text;
+
             try
             {
                 LivroBLL bll = new LivroBLL(banco, usuario, senha);
@@ -39,6 +40,7 @@ namespace apBiblioteca_22136_22143.UI
                                               txtCodigoLivro.Text,
                                               txtTituloLivro.Text,
                                               txtAutorLivro.Text);
+
             try
             {
                 LivroBLL bll = new LivroBLL(banco, usuario, senha);
@@ -70,6 +72,7 @@ namespace apBiblioteca_22136_22143.UI
         {
             string codigo = txtCodigoLivro.Text;
             Livro livro = null;
+
             try
             {
                 LivroBLL bll = new LivroBLL(banco, usuario, senha);

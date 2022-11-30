@@ -58,5 +58,10 @@ namespace apBiblioteca_22136_22143
                 formLeitores.Show();
             }
         }
+
+        private void emprestimosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // fazer essa parte :)))
+        }
     }
 }

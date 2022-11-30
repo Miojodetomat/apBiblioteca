@@ -65,12 +65,6 @@
     <Compile Include="UI\FrmEmprestimo.Designer.cs">
       <DependentUpon>FrmEmprestimo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmEmprestimos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmEmprestimos.Designer.cs">
-      <DependentUpon>FrmEmprestimos.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\FrmLeitores.cs">
       <SubType>Form</SubType>
     </Compile>

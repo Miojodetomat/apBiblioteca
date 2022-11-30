@@ -60,6 +60,7 @@ namespace DAL
             try
             {
                 String sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM bibLivro";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -79,14 +80,16 @@ namespace DAL
             try
             {
                 String sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor " +
-                " FROM bibLeitor WHERE idLeitor = @id";
+                             " FROM bibLeitor WHERE idLeitor = @id";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                Leitor leitor = null;
+                Leitor leitor = null
+                    ;
                 if (dr.Read())
                 {
                     leitor = new Leitor(
@@ -110,7 +113,8 @@ namespace DAL
             try
             {
                 String sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM " +
-                    " BibLeitor WHERE nomeLeitor LIKE '%@nome%' ";
+                             " BibLeitor WHERE nomeLeitor LIKE '%@nome%' ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@nome", nome);
@@ -131,8 +135,9 @@ namespace DAL
             try
             {
                 String sql = "INSERT INTO bibLeitor " +
-                " (nomeLeitor, telefoneLeitor, emailLeitor, enderecoLeitor) " +
-               " VALUES (@nome,@telefone, @email, @endereco) ";
+                             " (nomeLeitor, telefoneLeitor, emailLeitor, enderecoLeitor) " +
+                             " VALUES (@nome,@telefone, @email, @endereco) ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@nome", qualLeitor.NomeLeitor);
@@ -157,6 +162,7 @@ namespace DAL
             try
             {
                 String sql = "DELETE FROM bibLeitor WHERE idLeitor = @idLeitor ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLeitor", qualLeitor.IdLeitor);
@@ -178,11 +184,12 @@ namespace DAL
             try
             {
                 String sql = "UPDATE bibLeitor " +
-                " SET nomeLeitor= @nome ," +
-               " telefoneLeitor=@tel," +
-               " emailLeitor=@email, " +
-               " enderecoLeitor=@endereco " +
-               " WHERE idLeitor = @idLeitor ";
+                             " SET nomeLeitor= @nome ," +
+                             " telefoneLeitor=@tel," +
+                             " emailLeitor=@email, " +
+                             " enderecoLeitor=@endereco " +
+                             " WHERE idLeitor = @idLeitor ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLeitor", qualLeitor.IdLeitor);

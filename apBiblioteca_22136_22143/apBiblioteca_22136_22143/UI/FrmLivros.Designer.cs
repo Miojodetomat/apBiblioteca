@@ -93,57 +93,62 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(160, 227);
+            this.btnNovo.BackColor = System.Drawing.Color.Silver;
+            this.btnNovo.Location = new System.Drawing.Point(106, 220);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(77, 35);
             this.btnNovo.TabIndex = 12;
             this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(282, 227);
+            this.btnAlterar.BackColor = System.Drawing.Color.Silver;
+            this.btnAlterar.Location = new System.Drawing.Point(228, 220);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(77, 35);
             this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(404, 227);
+            this.btnExcluir.BackColor = System.Drawing.Color.Silver;
+            this.btnExcluir.Location = new System.Drawing.Point(350, 220);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(77, 35);
             this.btnExcluir.TabIndex = 10;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Exibir
             // 
-            this.Exibir.Location = new System.Drawing.Point(526, 227);
+            this.Exibir.BackColor = System.Drawing.Color.Silver;
+            this.Exibir.Location = new System.Drawing.Point(472, 220);
             this.Exibir.Name = "Exibir";
             this.Exibir.Size = new System.Drawing.Size(77, 35);
             this.Exibir.TabIndex = 9;
             this.Exibir.Text = "Exibir";
-            this.Exibir.UseVisualStyleBackColor = true;
+            this.Exibir.UseVisualStyleBackColor = false;
             this.Exibir.Click += new System.EventHandler(this.Exibir_Click);
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(316, 56);
+            this.btnProcurar.BackColor = System.Drawing.Color.Silver;
+            this.btnProcurar.Location = new System.Drawing.Point(472, 39);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(77, 26);
+            this.btnProcurar.Size = new System.Drawing.Size(77, 35);
             this.btnProcurar.TabIndex = 8;
             this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtTituloLivro
             // 
-            this.txtTituloLivro.Location = new System.Drawing.Point(160, 134);
+            this.txtTituloLivro.Location = new System.Drawing.Point(170, 121);
             this.txtTituloLivro.MaxLength = 50;
             this.txtTituloLivro.Name = "txtTituloLivro";
             this.txtTituloLivro.Size = new System.Drawing.Size(443, 26);
@@ -151,7 +156,7 @@
             // 
             // txtAutorLivro
             // 
-            this.txtAutorLivro.Location = new System.Drawing.Point(160, 174);
+            this.txtAutorLivro.Location = new System.Drawing.Point(170, 160);
             this.txtAutorLivro.MaxLength = 50;
             this.txtAutorLivro.Name = "txtAutorLivro";
             this.txtAutorLivro.Size = new System.Drawing.Size(443, 26);
@@ -159,15 +164,15 @@
             // 
             // txtIdLivro
             // 
-            this.txtIdLivro.Location = new System.Drawing.Point(160, 56);
+            this.txtIdLivro.Location = new System.Drawing.Point(170, 43);
             this.txtIdLivro.Name = "txtIdLivro";
             this.txtIdLivro.ReadOnly = true;
-            this.txtIdLivro.Size = new System.Drawing.Size(150, 26);
+            this.txtIdLivro.Size = new System.Drawing.Size(135, 26);
             this.txtIdLivro.TabIndex = 5;
             // 
             // txtCodigoLivro
             // 
-            this.txtCodigoLivro.Location = new System.Drawing.Point(160, 94);
+            this.txtCodigoLivro.Location = new System.Drawing.Point(170, 82);
             this.txtCodigoLivro.MaxLength = 10;
             this.txtCodigoLivro.Name = "txtCodigoLivro";
             this.txtCodigoLivro.Size = new System.Drawing.Size(150, 26);
@@ -176,7 +181,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 180);
+            this.label4.Location = new System.Drawing.Point(20, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 20);
             this.label4.TabIndex = 3;
@@ -185,7 +190,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 139);
+            this.label3.Location = new System.Drawing.Point(42, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 20);
             this.label3.TabIndex = 2;
@@ -194,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 98);
+            this.label2.Location = new System.Drawing.Point(36, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 1;
@@ -203,7 +208,7 @@
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(38, 59);
+            this.lbId.Location = new System.Drawing.Point(48, 46);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(104, 20);
             this.lbId.TabIndex = 0;
@@ -233,7 +238,7 @@
             this.autorLivro});
             this.dgvLivros.Location = new System.Drawing.Point(3, 6);
             this.dgvLivros.Name = "dgvLivros";
-            this.dgvLivros.Size = new System.Drawing.Size(645, 270);
+            this.dgvLivros.Size = new System.Drawing.Size(645, 256);
             this.dgvLivros.TabIndex = 0;
             // 
             // idLivro

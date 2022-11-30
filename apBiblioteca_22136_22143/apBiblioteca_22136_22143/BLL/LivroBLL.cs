@@ -21,6 +21,7 @@ namespace BLL
             this.usuario = usuario;
             this.senha = senha;
         }
+
         public DataTable SelecionarLivros() {
             DataTable tb = new DataTable();
             try
@@ -34,6 +35,7 @@ namespace BLL
             }
             return tb;
         }
+
         public void IncluirLivro(Livro livro) 
         {
             try
@@ -46,6 +48,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public void AlterarLivro(Livro livro) 
         {
             try
@@ -58,6 +61,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public void ExcluirLivro(Livro livro) 
         {
             try
@@ -70,6 +74,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public List<Livro> ListarLivros() 
         {
             try
@@ -82,6 +87,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public Livro ListarLivroPorId(int id) {
             try
             {
@@ -93,6 +99,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public Livro ListarLivroPorCodigo(string codigo)
         {
             try

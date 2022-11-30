@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 
-namespace apBiblioteca_22136_22143
+namespace apBiblioteca_22136_22143.UI
 {
     public partial class FrmEmprestimo : Form
     {
@@ -37,7 +37,9 @@ namespace apBiblioteca_22136_22143
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text), 0, 0, dtEmp.Value, dtDevPrev.Value, dtDevPrev.Value);
+            Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text), 0, 0, 
+                                                   dtEmp.Value, dtDevPrev.Value, dtDevPrev.Value);
+
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
@@ -64,12 +66,12 @@ namespace apBiblioteca_22136_22143
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            Emprestimo emp = new Emprestimo(int.Parse(txtIdEmprestimoDev.Text), int.Parse(txtIdLivroDev.Text),
-                                                int.Parse(txtIdLeitorDev.Text), dtEmp.Value, dtDevPrev.Value, dtDevReal.Value);
+            Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimoDev.Text), int.Parse(txtIdLivroDev.Text),
+                                                   int.Parse(txtIdLeitorDev.Text), dtEmp.Value, dtDevPrev.Value, dtDevReal.Value);
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                bll.AlterarEmprestimo(emp);
+                bll.AlterarEmprestimo(emprestimo);
             }
             catch(Exception ex)
             {
@@ -81,7 +83,7 @@ namespace apBiblioteca_22136_22143
         {
             try
             {
-                EmprestimoBLL bll = new EmprestimoBLL(banco,usuario, senha);
+                EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
                 dgvEmprestimos.DataSource = bll.SelecionarEmprestimosPorLeitor(int.Parse(txtIdLeitor.Text));
             }
             catch (Exception ex)
@@ -93,7 +95,8 @@ namespace apBiblioteca_22136_22143
         private void btnNovo_Click(object sender, EventArgs e)
         {
             Emprestimo emprestimo = new Emprestimo(0, int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
-                                                    dtEmp.Value, dtDevPrev.Value, dtDevReal.Value);
+                                                   dtEmp.Value, dtDevPrev.Value, dtDevReal.Value);
+
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);

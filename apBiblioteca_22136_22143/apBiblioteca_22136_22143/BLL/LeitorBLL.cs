@@ -36,6 +36,7 @@ namespace BLL
             }
             return tb;
         }
+
         public void IncluirLeitor(Leitor leitor)
         {
             try
@@ -48,6 +49,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public void AlterarLeitor(Leitor leitor)
         {
             try
@@ -60,6 +62,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public void ExcluirLeitor(Leitor leitor)
         {
             try
@@ -72,6 +75,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public List<Leitor> ListarLeitores()
         {
             try
@@ -84,6 +88,7 @@ namespace BLL
                 throw ex;
             }
         }
+
         public DataTable ListarLeitoresPorNome(string nome)
         {
             try

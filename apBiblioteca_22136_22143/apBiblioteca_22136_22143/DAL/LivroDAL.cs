@@ -60,6 +60,7 @@ namespace DAL
             try
             {
                 String sql = "SELECT idLivro,codigoLivro,tituloLivro,autorLivro FROM Livro";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -78,7 +79,8 @@ namespace DAL
             try
             {
                 String sql = "SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
-                " FROM bibLivro WHERE idLivro = @id";
+                             " FROM bibLivro WHERE idLivro = @id";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@id", idDesejado);
@@ -106,8 +108,9 @@ namespace DAL
             try
             {
                 String sql = "SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
-                " FROM Livro" +
-               " WHERE codigoLivro = @codigo";
+                             " FROM Livro" +
+                             " WHERE codigoLivro = @codigo";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@codigo", codigo);
@@ -119,8 +122,8 @@ namespace DAL
                 {
                     livro = new Livro(Convert.ToInt32(dr["idLivro"]),
                     dr["codigoLivro"].ToString(),
-                   dr["tituloLivro"].ToString(),
-                   dr["autoroLIvro"].ToString());
+                    dr["tituloLivro"].ToString(),
+                    dr["autoroLIvro"].ToString());
                 }
                 return livro;
             }
@@ -135,8 +138,9 @@ namespace DAL
             try
             {
                 String sql = "INSERT INTO Livro " +
-                " (codigoLivro, tituloLivro, autorLivro) " +
-               " VALUES (@codigo,@titulo, @autor) ";
+                             " (codigoLivro, tituloLivro, autorLivro) " +
+                             " VALUES (@codigo,@titulo, @autor) ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@codigo", qualLivro.CodigoLivro);
@@ -159,6 +163,7 @@ namespace DAL
             try
             {
                 String sql = "DELETE FROM Livro WHERE idLIvro = @idLivro ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLivro", qualLivro.IdLivro);
@@ -180,10 +185,11 @@ namespace DAL
             try
             {
                 String sql = "UPDATE Livro " +
-                " SET tituloLivro= @titulo ," +
-               " codigoLivro=@codigo," +
-               " autorLivro=@autor " +
-               " WHERE idLivro = @idLivro ";
+                             " SET tituloLivro= @titulo ," +
+                             " codigoLivro=@codigo," +
+                             " autorLivro=@autor " +
+                             " WHERE idLivro = @idLivro ";
+
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
                 cmd.Parameters.AddWithValue("@idLivro", qualLivro.IdLivro);
