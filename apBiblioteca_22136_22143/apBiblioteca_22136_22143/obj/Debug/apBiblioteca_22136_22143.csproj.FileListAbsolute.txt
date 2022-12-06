@@ -10,3 +10,17 @@ Z:\2o Semestre\BD2\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\a
 Z:\2o Semestre\BD2\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.CoreCompileInputs.cache
 Z:\2o Semestre\BD2\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.exe
 Z:\2o Semestre\BD2\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.pdb
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\bin\Debug\apBiblioteca_22136_22143.exe.config
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\bin\Debug\apBiblioteca_22136_22143.exe
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\bin\Debug\apBiblioteca_22136_22143.pdb
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.AssemblyReference.cache
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.SuggestedBindingRedirects.cache
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.FrmPrincipal.resources
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmEmprestimo.resources
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmLeitores.resources
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmLivros.resources
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.Properties.Resources.resources
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.GenerateResource.cache
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.CoreCompileInputs.cache
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.exe
+Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.pdb

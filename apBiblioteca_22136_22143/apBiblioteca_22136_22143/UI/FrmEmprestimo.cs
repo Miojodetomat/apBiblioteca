@@ -15,6 +15,16 @@ namespace apBiblioteca_22136_22143.UI
     public partial class FrmEmprestimo : Form
     {
         public string banco, usuario, senha;
+        public const String DEVOLUCAO = "devolucao";
+        public const String EMPRESTIMO = "emprestimo";
+
+        public FrmEmprestimo(String operacao)
+        {
+            InitializeComponent();
+            if(operacao == DEVOLUCAO)
+                tpDevolucao.Focus();
+        }
+
         public FrmEmprestimo()
         {
             InitializeComponent();

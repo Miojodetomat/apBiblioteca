@@ -35,9 +35,10 @@ namespace DTO
             set
             {
                 // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoNome);
-                // preenche codigo com zeros à esquerda até completar o tamanho mãximo 
-                value = value.PadLeft(tamanhoNome, '0');
+                if (value.Length > tamanhoNome)
+                    value = value.Remove(tamanhoNome);
+                else
+                    value = value.PadRight(tamanhoNome, ' ');
                 // armazena o valor passado no atributo de destino
                 nomeLeitor = value;
             }
@@ -49,7 +50,8 @@ namespace DTO
             set
             {
                 // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoTelefone);
+                if (value.Length > tamanhoTelefone)
+                    value = value.Remove(tamanhoTelefone);
                 // preenche título com espaços à direita até completar o tamanho mãximo
                 value = value.PadRight(tamanhoTelefone, ' ');
                 // armazena o valor passado no atributo de destino
@@ -66,7 +68,8 @@ namespace DTO
             set
             {
                 // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoEmail);
+                if (value.Length > tamanhoEmail)
+                    value = value.Remove(tamanhoEmail);
                 // preenche título com espaços à direita até completar o tamanho mãximo
                 value = value.PadRight(tamanhoEmail, ' ');
                 // armazena o valor passado no atributo de destino
@@ -83,7 +86,8 @@ namespace DTO
             set
             {
                 // remove qualquer caracter além do tamanho máximo do campo
-                value = value.Remove(tamanhoEndereco);
+                if (value.Length > tamanhoEndereco)
+                    value = value.Remove(tamanhoEndereco);
                 // preenche título com espaços à direita até completar o tamanho mãximo
                 value = value.PadRight(tamanhoEndereco, ' ');
                 // armazena o valor passado no atributo de destino

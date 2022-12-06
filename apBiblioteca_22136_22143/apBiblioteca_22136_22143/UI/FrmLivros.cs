@@ -18,15 +18,15 @@ namespace apBiblioteca_22136_22143.UI
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            Livro livro = new Livro(0, "", "", "");
-            livro.CodigoLivro = txtCodigoLivro.Text;
-            livro.TituloLivro = txtTituloLivro.Text;
-            livro.AutorLivro = txtAutorLivro.Text;
+            Livro livr = new Livro(0, "", "", "");
+            livr.CodigoLivro = txtCodigoLivro.Text;
+            livr.TituloLivro = txtTituloLivro.Text;
+            livr.AutorLivro = txtAutorLivro.Text;
 
             try
             {
                 LivroBLL bll = new LivroBLL(banco, usuario, senha);
-                bll.IncluirLivro(livro);
+                bll.IncluirLivro(livr);
             }
             catch (Exception ex)
             {
