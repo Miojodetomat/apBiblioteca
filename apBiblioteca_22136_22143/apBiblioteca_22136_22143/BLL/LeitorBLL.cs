@@ -89,6 +89,19 @@ namespace BLL
             }
         }
 
+        public List<Leitor> SelecionarLeitoresPorNome(String nome)
+        {
+            try
+            {
+                dal = new DAL.LeitorDAL(banco, usuario, senha);
+                return dal.SelectListaDeLeitoresPorNome(nome);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable ListarLeitoresPorNome(string nome)
         {
             try

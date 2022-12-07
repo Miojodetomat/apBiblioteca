@@ -54,11 +54,12 @@ namespace DAL
                 throw new Exception("Erro ao acessar cadastros " + ex.Message);
             }
         }
+
         public DataTable SelectLeitores()
         {
             try
             {
-                String sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM bibLivro";
+                String sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM bibLeitor";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -107,16 +108,53 @@ namespace DAL
             }
         }
 
+        public List<Leitor> SelectListaDeLeitoresPorNome(String nome)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conexaoSQLServer))
+                {
+                    using (SqlCommand command =
+                    new SqlCommand("SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM " +
+                                   " BibLeitor WHERE nomeLeitor LIKE @nome ", conn))
+                    {
+                        conn.Open();
+                        command.Parameters.AddWithValue("@nome", '%'+nome+'%');
+                        List<Leitor> listaLeitores = new List<Leitor>();
+                        using (SqlDataReader dr = command.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                Leitor leitor = new Leitor(
+                                (int)dr["idLeitor"],
+                                dr["nomeLeitor"] + "",
+                                dr["telefoneLeitor"] + "",
+                                dr["emailLeitor"] + "",
+                                dr["enderecoLeitor"] + ""
+                                );
+                                listaLeitores.Add(leitor);
+                            }
+                        }
+                        return listaLeitores;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao acessar cadastros " + ex.Message);
+            }
+        }
+
         public DataTable SelectLeitoresByNome(string nome)
         {
             try
             {
                 String sql = "SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM " +
-                             " BibLeitor WHERE nomeLeitor LIKE '%@nome%' ";
+                             " BibLeitor WHERE nomeLeitor LIKE @nome ";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@nome", '%'+nome+'%');
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();

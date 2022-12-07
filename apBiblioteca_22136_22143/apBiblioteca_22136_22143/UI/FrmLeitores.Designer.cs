@@ -260,6 +260,7 @@
             this.dgvListaLeitores.Name = "dgvListaLeitores";
             this.dgvListaLeitores.Size = new System.Drawing.Size(643, 298);
             this.dgvListaLeitores.TabIndex = 0;
+            this.dgvListaLeitores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaLeitores_CellDoubleClick);
             // 
             // idLeitor
             // 
