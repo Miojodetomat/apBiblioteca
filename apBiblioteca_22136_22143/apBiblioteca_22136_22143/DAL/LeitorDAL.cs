@@ -16,9 +16,8 @@ namespace DAL
 
         public LeitorDAL(string banco, string usuario, string senha)
         {
-            _conexaoSQLServer =
-               $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
-               $"User id={usuario}; Password={senha}";
+            _conexaoSQLServer = $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
+                                $"User id={usuario}; Password={senha}";
         }
 
         public List<Leitor> SelectListLeitores()
@@ -88,8 +87,8 @@ namespace DAL
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                Leitor leitor = null
-                    ;
+                Leitor leitor = null;
+
                 if (dr.Read())
                 {
                     leitor = new Leitor(

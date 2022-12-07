@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tcLivros = new System.Windows.Forms.TabControl();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -43,30 +43,30 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
-            this.tpLista = new System.Windows.Forms.TabPage();
+            this.tpListaLivros = new System.Windows.Forms.TabPage();
             this.dgvLivros = new System.Windows.Forms.DataGridView();
             this.idLivro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoLivro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloLivro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autorLivro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1.SuspendLayout();
+            this.tcLivros.SuspendLayout();
             this.tpCadastro.SuspendLayout();
-            this.tpLista.SuspendLayout();
+            this.tpListaLivros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tcLivros
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tcLivros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tpCadastro);
-            this.tabControl1.Controls.Add(this.tpLista);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(662, 322);
-            this.tabControl1.TabIndex = 0;
+            this.tcLivros.Controls.Add(this.tpCadastro);
+            this.tcLivros.Controls.Add(this.tpListaLivros);
+            this.tcLivros.Location = new System.Drawing.Point(12, 12);
+            this.tcLivros.Name = "tcLivros";
+            this.tcLivros.SelectedIndex = 0;
+            this.tcLivros.Size = new System.Drawing.Size(662, 322);
+            this.tcLivros.TabIndex = 0;
             // 
             // tpCadastro
             // 
@@ -214,16 +214,16 @@
             this.lbId.TabIndex = 0;
             this.lbId.Text = "Identificação:";
             // 
-            // tpLista
+            // tpListaLivros
             // 
-            this.tpLista.BackColor = System.Drawing.Color.DarkGray;
-            this.tpLista.Controls.Add(this.dgvLivros);
-            this.tpLista.Location = new System.Drawing.Point(4, 29);
-            this.tpLista.Name = "tpLista";
-            this.tpLista.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLista.Size = new System.Drawing.Size(654, 289);
-            this.tpLista.TabIndex = 1;
-            this.tpLista.Text = "Lista";
+            this.tpListaLivros.BackColor = System.Drawing.Color.DarkGray;
+            this.tpListaLivros.Controls.Add(this.dgvLivros);
+            this.tpListaLivros.Location = new System.Drawing.Point(4, 29);
+            this.tpListaLivros.Name = "tpListaLivros";
+            this.tpListaLivros.Padding = new System.Windows.Forms.Padding(3);
+            this.tpListaLivros.Size = new System.Drawing.Size(654, 289);
+            this.tpListaLivros.TabIndex = 1;
+            this.tpListaLivros.Text = "Lista";
             // 
             // dgvLivros
             // 
@@ -238,7 +238,7 @@
             this.autorLivro});
             this.dgvLivros.Location = new System.Drawing.Point(3, 6);
             this.dgvLivros.Name = "dgvLivros";
-            this.dgvLivros.Size = new System.Drawing.Size(645, 256);
+            this.dgvLivros.Size = new System.Drawing.Size(651, 283);
             this.dgvLivros.TabIndex = 0;
             // 
             // idLivro
@@ -271,14 +271,14 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(686, 346);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcLivros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Name = "FrmLivros";
             this.Text = "Manutenção de livros de biblioteca";
-            this.tabControl1.ResumeLayout(false);
+            this.tcLivros.ResumeLayout(false);
             this.tpCadastro.ResumeLayout(false);
             this.tpCadastro.PerformLayout();
-            this.tpLista.ResumeLayout(false);
+            this.tpListaLivros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).EndInit();
             this.ResumeLayout(false);
 
@@ -286,9 +286,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tcLivros;
         private System.Windows.Forms.TabPage tpCadastro;
-        private System.Windows.Forms.TabPage tpLista;
+        private System.Windows.Forms.TabPage tpListaLivros;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.TextBox txtTituloLivro;
         private System.Windows.Forms.TextBox txtAutorLivro;

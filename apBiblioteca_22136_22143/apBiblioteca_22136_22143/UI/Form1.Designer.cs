@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.msOpcoes = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.livrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leitoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,22 +50,22 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.menuStrip1.SuspendLayout();
+            this.msOpcoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // msOpcoes
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msOpcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.operaçõesToolStripMenuItem,
             this.relatótiosToolStripMenuItem,
             this.sairToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(379, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msOpcoes.Location = new System.Drawing.Point(0, 0);
+            this.msOpcoes.Name = "msOpcoes";
+            this.msOpcoes.Size = new System.Drawing.Size(379, 24);
+            this.msOpcoes.TabIndex = 0;
+            this.msOpcoes.Text = "menuStrip1";
             // 
             // cadastroToolStripMenuItem
             // 
@@ -248,13 +248,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(379, 200);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.msOpcoes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.msOpcoes;
             this.Name = "FrmPrincipal";
             this.Text = "Login";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msOpcoes.ResumeLayout(false);
+            this.msOpcoes.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -264,7 +264,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip msOpcoes;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem livrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem leitoresToolStripMenuItem;

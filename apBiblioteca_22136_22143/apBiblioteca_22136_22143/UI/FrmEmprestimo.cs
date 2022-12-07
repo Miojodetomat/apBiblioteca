@@ -12,20 +12,20 @@ using DTO;
 
 namespace apBiblioteca_22136_22143.UI
 {
-    public partial class FrmEmprestimo : Form
+    public partial class FrmEmprestimos : Form
     {
         public string banco, usuario, senha;
         public const String DEVOLUCAO = "devolucao";
         public const String EMPRESTIMO = "emprestimo";
 
-        public FrmEmprestimo(String operacao)
+        public FrmEmprestimos(String operacao)
         {
             InitializeComponent();
             if(operacao == DEVOLUCAO)
                 tpDevolucao.Focus();
         }
 
-        public FrmEmprestimo()
+        public FrmEmprestimos()
         {
             InitializeComponent();
         }
@@ -67,6 +67,7 @@ namespace apBiblioteca_22136_22143.UI
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
                 dgvEmprestimos.DataSource = bll.SelecionarEmprestimos();
+                tcEmprestimos.SelectTab(tpListaEmprestimos);
             }
             catch (Exception ex)
             {

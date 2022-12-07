@@ -133,6 +133,7 @@ namespace DAL
                 throw ex;
             }
         }
+
         public void InsertEmprestimo(Emprestimo qualEmprestimo)
         {
             try

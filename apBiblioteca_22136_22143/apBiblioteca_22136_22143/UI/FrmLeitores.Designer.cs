@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tcLeitores = new System.Windows.Forms.TabControl();
             this.tpCadastroLeitores = new System.Windows.Forms.TabPage();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -52,24 +52,24 @@
             this.telefoneLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl.SuspendLayout();
+            this.tcLeitores.SuspendLayout();
             this.tpCadastroLeitores.SuspendLayout();
             this.tpListaLeitores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaLeitores)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl
+            // tcLeitores
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tcLeitores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tpCadastroLeitores);
-            this.tabControl.Controls.Add(this.tpListaLeitores);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(647, 337);
-            this.tabControl.TabIndex = 0;
+            this.tcLeitores.Controls.Add(this.tpCadastroLeitores);
+            this.tcLeitores.Controls.Add(this.tpListaLeitores);
+            this.tcLeitores.Location = new System.Drawing.Point(12, 12);
+            this.tcLeitores.Name = "tcLeitores";
+            this.tcLeitores.SelectedIndex = 0;
+            this.tcLeitores.Size = new System.Drawing.Size(647, 337);
+            this.tcLeitores.TabIndex = 0;
             // 
             // tpCadastroLeitores
             // 
@@ -256,9 +256,9 @@
             this.telefoneLeitor,
             this.emailLeitor,
             this.enderecoLeitor});
-            this.dgvListaLeitores.Location = new System.Drawing.Point(6, 6);
+            this.dgvListaLeitores.Location = new System.Drawing.Point(0, 0);
             this.dgvListaLeitores.Name = "dgvListaLeitores";
-            this.dgvListaLeitores.Size = new System.Drawing.Size(633, 292);
+            this.dgvListaLeitores.Size = new System.Drawing.Size(643, 298);
             this.dgvListaLeitores.TabIndex = 0;
             // 
             // idLeitor
@@ -299,11 +299,11 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(671, 361);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.tcLeitores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Name = "FrmLeitores";
             this.Text = "FrmLeitores";
-            this.tabControl.ResumeLayout(false);
+            this.tcLeitores.ResumeLayout(false);
             this.tpCadastroLeitores.ResumeLayout(false);
             this.tpCadastroLeitores.PerformLayout();
             this.tpListaLeitores.ResumeLayout(false);
@@ -314,7 +314,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl tcLeitores;
         private System.Windows.Forms.TabPage tpCadastroLeitores;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;

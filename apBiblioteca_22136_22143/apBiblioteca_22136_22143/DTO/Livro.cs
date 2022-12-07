@@ -10,7 +10,7 @@ namespace DTO
     {
         public const int tamanhoCodigo = 10,
                          tamanhoTitulo = 50,
-                         tamanhoAutor = 50;
+                         tamanhoAutor  = 50;
         int idLivro;
         string codigoLivro;
         string tituloLivro;

@@ -1,6 +1,6 @@
 ﻿namespace apBiblioteca_22136_22143.UI
 {
-    partial class FrmEmprestimo
+    partial class FrmEmprestimos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tcEmprestimos = new System.Windows.Forms.TabControl();
             this.tpEmprestimo = new System.Windows.Forms.TabPage();
             this.dtDevPrev = new System.Windows.Forms.DateTimePicker();
             this.dtEmp = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtIdEmprestimoDev = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tpListaLeitores = new System.Windows.Forms.TabPage();
+            this.tpListaEmprestimos = new System.Windows.Forms.TabPage();
             this.dgvEmprestimos = new System.Windows.Forms.DataGridView();
             this.idEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,26 +65,26 @@
             this.dataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDevolucaoPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDevolucaoReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl.SuspendLayout();
+            this.tcEmprestimos.SuspendLayout();
             this.tpEmprestimo.SuspendLayout();
             this.tpDevolucao.SuspendLayout();
-            this.tpListaLeitores.SuspendLayout();
+            this.tpListaEmprestimos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl
+            // tcEmprestimos
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tcEmprestimos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tpEmprestimo);
-            this.tabControl.Controls.Add(this.tpDevolucao);
-            this.tabControl.Controls.Add(this.tpListaLeitores);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(806, 362);
-            this.tabControl.TabIndex = 1;
+            this.tcEmprestimos.Controls.Add(this.tpEmprestimo);
+            this.tcEmprestimos.Controls.Add(this.tpDevolucao);
+            this.tcEmprestimos.Controls.Add(this.tpListaEmprestimos);
+            this.tcEmprestimos.Location = new System.Drawing.Point(12, 12);
+            this.tcEmprestimos.Name = "tcEmprestimos";
+            this.tcEmprestimos.SelectedIndex = 0;
+            this.tcEmprestimos.Size = new System.Drawing.Size(806, 362);
+            this.tcEmprestimos.TabIndex = 1;
             // 
             // tpEmprestimo
             // 
@@ -367,16 +367,16 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Identificação :";
             // 
-            // tpListaLeitores
+            // tpListaEmprestimos
             // 
-            this.tpListaLeitores.Controls.Add(this.dgvEmprestimos);
-            this.tpListaLeitores.Location = new System.Drawing.Point(4, 29);
-            this.tpListaLeitores.Name = "tpListaLeitores";
-            this.tpListaLeitores.Padding = new System.Windows.Forms.Padding(3);
-            this.tpListaLeitores.Size = new System.Drawing.Size(798, 329);
-            this.tpListaLeitores.TabIndex = 1;
-            this.tpListaLeitores.Text = "Lista";
-            this.tpListaLeitores.UseVisualStyleBackColor = true;
+            this.tpListaEmprestimos.Controls.Add(this.dgvEmprestimos);
+            this.tpListaEmprestimos.Location = new System.Drawing.Point(4, 29);
+            this.tpListaEmprestimos.Name = "tpListaEmprestimos";
+            this.tpListaEmprestimos.Padding = new System.Windows.Forms.Padding(3);
+            this.tpListaEmprestimos.Size = new System.Drawing.Size(798, 329);
+            this.tpListaEmprestimos.TabIndex = 1;
+            this.tpListaEmprestimos.Text = "Lista";
+            this.tpListaEmprestimos.UseVisualStyleBackColor = true;
             // 
             // dgvEmprestimos
             // 
@@ -388,9 +388,9 @@
             this.dataEmprestimo,
             this.dataDevolucaoPrevista,
             this.dataDevolucaoReal});
-            this.dgvEmprestimos.Location = new System.Drawing.Point(0, 0);
+            this.dgvEmprestimos.Location = new System.Drawing.Point(-4, 0);
             this.dgvEmprestimos.Name = "dgvEmprestimos";
-            this.dgvEmprestimos.Size = new System.Drawing.Size(798, 329);
+            this.dgvEmprestimos.Size = new System.Drawing.Size(802, 329);
             this.dgvEmprestimos.TabIndex = 0;
             // 
             // idEmprestimo
@@ -427,22 +427,22 @@
             // 
             this.dataDevolucaoReal.HeaderText = "Devolução Real";
             this.dataDevolucaoReal.Name = "dataDevolucaoReal";
-            this.dataDevolucaoReal.Width = 155;
+            this.dataDevolucaoReal.Width = 150;
             // 
-            // FrmEmprestimo
+            // FrmEmprestimos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(830, 386);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.tcEmprestimos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Name = "FrmEmprestimo";
+            this.Name = "FrmEmprestimos";
             this.Text = "FrmEmprestimo";
-            this.tabControl.ResumeLayout(false);
+            this.tcEmprestimos.ResumeLayout(false);
             this.tpEmprestimo.ResumeLayout(false);
             this.tpEmprestimo.PerformLayout();
             this.tpDevolucao.ResumeLayout(false);
             this.tpDevolucao.PerformLayout();
-            this.tpListaLeitores.ResumeLayout(false);
+            this.tpListaEmprestimos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).EndInit();
             this.ResumeLayout(false);
 
@@ -450,7 +450,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl tcEmprestimos;
         private System.Windows.Forms.TabPage tpEmprestimo;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.Button btnAlterar;
@@ -465,7 +465,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tpListaLeitores;
+        private System.Windows.Forms.TabPage tpListaEmprestimos;
         private System.Windows.Forms.DataGridView dgvEmprestimos;
         private System.Windows.Forms.TabPage tpDevolucao;
         private System.Windows.Forms.TextBox txtIdLeitorDev;

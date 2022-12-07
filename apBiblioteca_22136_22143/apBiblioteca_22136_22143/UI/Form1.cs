@@ -17,7 +17,7 @@ namespace apBiblioteca_22136_22143
     {
         UI.FrmLivros formLivros = null;
         UI.FrmLeitores formLeitores = null;
-        UI.FrmEmprestimo formEmprestimo = null;
+        UI.FrmEmprestimos formEmprestimo = null;
 
         public FrmPrincipal()
         {
@@ -63,7 +63,7 @@ namespace apBiblioteca_22136_22143
                 MessageBox.Show("Preencha os dados de conexão!");
             else
             {
-                formEmprestimo = new UI.FrmEmprestimo();
+                formEmprestimo = new UI.FrmEmprestimos();
                 formEmprestimo.banco = txtBanco.Text;
                 formEmprestimo.senha = txtSenha.Text;
                 formEmprestimo.usuario = txtUsuario.Text;
@@ -77,7 +77,7 @@ namespace apBiblioteca_22136_22143
                 MessageBox.Show("Preencha os dados de conexão!");
             else
             {
-                formEmprestimo = new UI.FrmEmprestimo(UI.FrmEmprestimo.DEVOLUCAO);
+                formEmprestimo = new UI.FrmEmprestimos(UI.FrmEmprestimos.DEVOLUCAO);
                 formEmprestimo.banco = txtBanco.Text;
                 formEmprestimo.senha = txtSenha.Text;
                 formEmprestimo.usuario = txtUsuario.Text;

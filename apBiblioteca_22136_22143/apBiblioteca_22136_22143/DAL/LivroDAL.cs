@@ -17,9 +17,8 @@ namespace DAL
 
         public LivroDAL(string banco, string usuario, string senha)
         {
-            _conexaoSQLServer =
-                $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
-                $"User id={usuario}; Password={senha}";
+            _conexaoSQLServer = $"Data Source=regulus.cotuca.unicamp.br; Initial Catalog={banco};" +
+                                $"User id={usuario}; Password={senha}";
         }
 
         public List<Livro> SelectListLivros()
@@ -55,6 +54,7 @@ namespace DAL
                 throw new Exception("Erro ao acessar estoque " + ex.Message);
             }
         }
+
         public DataTable SelectLivros()
         {
             try
@@ -87,7 +87,9 @@ namespace DAL
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
                 Livro livro = null;
+
                 if (dr.Read())
                 {
                     livro = new Livro(Convert.ToInt32(dr["idLivro"]),
@@ -117,7 +119,9 @@ namespace DAL
                 _conexao.Open();
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
                 Livro livro = null;
+
                 if (dr.Read())
                 {
                     livro = new Livro(Convert.ToInt32(dr["idLivro"]),

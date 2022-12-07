@@ -93,8 +93,9 @@ namespace apBiblioteca_22136_22143.UI
         {
             try
             {
-                LivroBLL bll = new BLL.LivroBLL(banco, usuario, senha);
+                LivroBLL bll = new LivroBLL(banco, usuario, senha);
                 dgvLivros.DataSource = bll.SelecionarLivros();
+                tcLivros.SelectTab(tpListaLivros);
             }
             catch (Exception ex)
             {

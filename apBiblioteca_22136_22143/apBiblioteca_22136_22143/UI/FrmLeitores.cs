@@ -54,6 +54,7 @@ namespace apBiblioteca_22136_22143.UI
             {
                 LeitorBLL bll = new LeitorBLL(banco, usuario, senha);
                 dgvListaLeitores.DataSource = bll.ListarLeitores();
+                tcLeitores.SelectTab(tpListaLeitores);
             }
             catch (Exception ex)
             {
