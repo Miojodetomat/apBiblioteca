@@ -88,10 +88,10 @@
             this.tpCadastroLeitores.Controls.Add(this.label3);
             this.tpCadastroLeitores.Controls.Add(this.label2);
             this.tpCadastroLeitores.Controls.Add(this.label1);
-            this.tpCadastroLeitores.Location = new System.Drawing.Point(4, 29);
+            this.tpCadastroLeitores.Location = new System.Drawing.Point(4, 34);
             this.tpCadastroLeitores.Name = "tpCadastroLeitores";
             this.tpCadastroLeitores.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCadastroLeitores.Size = new System.Drawing.Size(639, 304);
+            this.tpCadastroLeitores.Size = new System.Drawing.Size(639, 299);
             this.tpCadastroLeitores.TabIndex = 0;
             this.tpCadastroLeitores.Text = "Cadastro";
             this.tpCadastroLeitores.UseVisualStyleBackColor = true;
@@ -154,9 +154,9 @@
             // txtNomeLeitor
             // 
             this.txtNomeLeitor.Location = new System.Drawing.Point(157, 70);
-            this.txtNomeLeitor.MaxLength = 10;
+            this.txtNomeLeitor.MaxLength = 50;
             this.txtNomeLeitor.Name = "txtNomeLeitor";
-            this.txtNomeLeitor.Size = new System.Drawing.Size(222, 26);
+            this.txtNomeLeitor.Size = new System.Drawing.Size(222, 30);
             this.txtNomeLeitor.TabIndex = 9;
             // 
             // txtTelefoneLeitor
@@ -164,7 +164,7 @@
             this.txtTelefoneLeitor.Location = new System.Drawing.Point(157, 111);
             this.txtTelefoneLeitor.MaxLength = 20;
             this.txtTelefoneLeitor.Name = "txtTelefoneLeitor";
-            this.txtTelefoneLeitor.Size = new System.Drawing.Size(222, 26);
+            this.txtTelefoneLeitor.Size = new System.Drawing.Size(222, 30);
             this.txtTelefoneLeitor.TabIndex = 8;
             // 
             // txtEmailLeitor
@@ -172,7 +172,7 @@
             this.txtEmailLeitor.Location = new System.Drawing.Point(157, 152);
             this.txtEmailLeitor.MaxLength = 50;
             this.txtEmailLeitor.Name = "txtEmailLeitor";
-            this.txtEmailLeitor.Size = new System.Drawing.Size(222, 26);
+            this.txtEmailLeitor.Size = new System.Drawing.Size(222, 30);
             this.txtEmailLeitor.TabIndex = 7;
             // 
             // txtEnderecoLeitor
@@ -180,7 +180,7 @@
             this.txtEnderecoLeitor.Location = new System.Drawing.Point(157, 193);
             this.txtEnderecoLeitor.MaxLength = 100;
             this.txtEnderecoLeitor.Name = "txtEnderecoLeitor";
-            this.txtEnderecoLeitor.Size = new System.Drawing.Size(438, 26);
+            this.txtEnderecoLeitor.Size = new System.Drawing.Size(438, 30);
             this.txtEnderecoLeitor.TabIndex = 6;
             // 
             // txtIdLeitor
@@ -188,7 +188,7 @@
             this.txtIdLeitor.Location = new System.Drawing.Point(157, 29);
             this.txtIdLeitor.Name = "txtIdLeitor";
             this.txtIdLeitor.ReadOnly = true;
-            this.txtIdLeitor.Size = new System.Drawing.Size(100, 26);
+            this.txtIdLeitor.Size = new System.Drawing.Size(100, 30);
             this.txtIdLeitor.TabIndex = 5;
             // 
             // label5
@@ -196,7 +196,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(83, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(75, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Nome :";
             // 
@@ -205,7 +205,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(63, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.Size = new System.Drawing.Size(100, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Telefone :";
             // 
@@ -214,7 +214,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(81, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "E-mail :";
             // 
@@ -223,7 +223,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(56, 197);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Endereço :";
             // 
@@ -232,17 +232,17 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.Size = new System.Drawing.Size(132, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Identificação :";
             // 
             // tpListaLeitores
             // 
             this.tpListaLeitores.Controls.Add(this.dgvListaLeitores);
-            this.tpListaLeitores.Location = new System.Drawing.Point(4, 29);
+            this.tpListaLeitores.Location = new System.Drawing.Point(4, 25);
             this.tpListaLeitores.Name = "tpListaLeitores";
             this.tpListaLeitores.Padding = new System.Windows.Forms.Padding(3);
-            this.tpListaLeitores.Size = new System.Drawing.Size(639, 304);
+            this.tpListaLeitores.Size = new System.Drawing.Size(639, 308);
             this.tpListaLeitores.TabIndex = 1;
             this.tpListaLeitores.Text = "Lista";
             this.tpListaLeitores.UseVisualStyleBackColor = true;
@@ -258,6 +258,7 @@
             this.enderecoLeitor});
             this.dgvListaLeitores.Location = new System.Drawing.Point(0, 0);
             this.dgvListaLeitores.Name = "dgvListaLeitores";
+            this.dgvListaLeitores.RowHeadersWidth = 51;
             this.dgvListaLeitores.Size = new System.Drawing.Size(643, 298);
             this.dgvListaLeitores.TabIndex = 0;
             this.dgvListaLeitores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaLeitores_CellDoubleClick);
@@ -265,6 +266,7 @@
             // idLeitor
             // 
             this.idLeitor.HeaderText = "Identificação";
+            this.idLeitor.MinimumWidth = 6;
             this.idLeitor.Name = "idLeitor";
             this.idLeitor.ReadOnly = true;
             this.idLeitor.Width = 105;
@@ -272,13 +274,16 @@
             // nomeLeitor
             // 
             this.nomeLeitor.HeaderText = "Nome";
-            this.nomeLeitor.MaxInputLength = 10;
+            this.nomeLeitor.MaxInputLength = 50;
+            this.nomeLeitor.MinimumWidth = 6;
             this.nomeLeitor.Name = "nomeLeitor";
+            this.nomeLeitor.Width = 125;
             // 
             // telefoneLeitor
             // 
             this.telefoneLeitor.HeaderText = "Telefone";
             this.telefoneLeitor.MaxInputLength = 20;
+            this.telefoneLeitor.MinimumWidth = 6;
             this.telefoneLeitor.Name = "telefoneLeitor";
             this.telefoneLeitor.Width = 110;
             // 
@@ -286,6 +291,7 @@
             // 
             this.emailLeitor.HeaderText = "E-mail";
             this.emailLeitor.MaxInputLength = 50;
+            this.emailLeitor.MinimumWidth = 6;
             this.emailLeitor.Name = "emailLeitor";
             this.emailLeitor.Width = 120;
             // 
@@ -293,6 +299,7 @@
             // 
             this.enderecoLeitor.HeaderText = "Endereço";
             this.enderecoLeitor.MaxInputLength = 100;
+            this.enderecoLeitor.MinimumWidth = 6;
             this.enderecoLeitor.Name = "enderecoLeitor";
             this.enderecoLeitor.Width = 150;
             // 
@@ -303,7 +310,7 @@
             this.Controls.Add(this.tcLeitores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Name = "FrmLeitores";
-            this.Text = "FrmLeitores";
+            this.Text = "Manutenção de leitores da biblioteca";
             this.tcLeitores.ResumeLayout(false);
             this.tpCadastroLeitores.ResumeLayout(false);
             this.tpCadastroLeitores.PerformLayout();
