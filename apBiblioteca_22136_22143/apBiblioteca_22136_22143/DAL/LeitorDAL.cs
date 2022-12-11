@@ -9,10 +9,16 @@ using DTO;
 
 namespace DAL
 {
+    /*
+        A camada Data Access Layer (DAL) claramente separa a lógica de
+        acesso aos dados da lógica de apresentação (formulário Windows,
+        Formulário Web ou dispositivo móvel).
+    */
+
     public class LeitorDAL
     {
         string _conexaoSQLServer = "";
-        SqlConnection _conexao = null;
+        SqlConnection _conexao   = null;
 
         public LeitorDAL(string banco, string usuario, string senha)
         {
@@ -116,7 +122,7 @@ namespace DAL
                 {
                     using (SqlCommand command =
                     new SqlCommand("SELECT idLeitor,nomeLeitor,telefoneLeitor,emailLeitor,enderecoLeitor FROM " +
-                                   " BibLeitor WHERE nomeLeitor LIKE @nome ", conn))
+                                   " bibLeitor WHERE nomeLeitor LIKE @nome ", conn))
                     {
                         conn.Open();
                         command.Parameters.AddWithValue("@nome", '%'+nome+'%');

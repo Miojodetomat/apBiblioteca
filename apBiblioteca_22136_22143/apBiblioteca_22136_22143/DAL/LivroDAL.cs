@@ -10,10 +10,16 @@ using DTO;
 
 namespace DAL
 {
+    /*
+        A camada Data Access Layer (DAL) claramente separa a lógica de
+        acesso aos dados da lógica de apresentação (formulário Windows,
+        Formulário Web ou dispositivo móvel).
+    */
+
     public class LivroDAL
     {
         string _conexaoSQLServer = "";
-        SqlConnection _conexao = null;
+        SqlConnection _conexao   = null;
 
         public LivroDAL(string banco, string usuario, string senha)
         {
@@ -28,7 +34,7 @@ namespace DAL
                 using (SqlConnection conn = new SqlConnection(_conexaoSQLServer))
                 {
                     using (SqlCommand command =
-                    new SqlCommand("Select * from Livro", conn))
+                    new SqlCommand("Select * from bibLivro", conn))
                     {
                         conn.Open();
                         List<Livro> listaLivros = new List<Livro>();
@@ -59,7 +65,7 @@ namespace DAL
         {
             try
             {
-                String sql = "SELECT idLivro,codigoLivro,tituloLivro,autorLivro FROM Livro";
+                String sql = "SELECT idLivro,codigoLivro,tituloLivro,autorLivro FROM bibLivro";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -105,45 +111,51 @@ namespace DAL
             }
 
         }
-        public Livro SelectLivroByCodigo(string codigo)
+
+        public List<Livro> SelectListaDeLivrosByCodigo(string codigo)
         {
             try
             {
-                String sql = "SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
-                             " FROM Livro" +
-                             " WHERE codigoLivro = @codigo";
-
-                _conexao = new SqlConnection(_conexaoSQLServer);
-                SqlCommand cmd = new SqlCommand(sql, _conexao);
-                cmd.Parameters.AddWithValue("@codigo", codigo);
-                _conexao.Open();
-                SqlDataReader dr;
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-
-                Livro livro = null;
-
-                if (dr.Read())
+                using (SqlConnection conn = new SqlConnection(_conexaoSQLServer))
                 {
-                    livro = new Livro(Convert.ToInt32(dr["idLivro"]),
-                    dr["codigoLivro"].ToString(),
-                    dr["tituloLivro"].ToString(),
-                    dr["autoroLIvro"].ToString());
+                    using (SqlCommand command =
+                    new SqlCommand("SELECT idLivro, codigoLivro, tituloLivro, autorLivro " +
+                                   " FROM bibLivro" +
+                                   " WHERE codigoLivro lIKE @codigo ", conn))
+                    {
+                        conn.Open();
+                        command.Parameters.AddWithValue("@codigo", '%'+codigo+'%');
+                        List<Livro> listaLivros = new List<Livro>();
+                        using (SqlDataReader dr = command.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                Livro livro = new Livro(
+                                (int)dr["idLivro"],
+                                dr["codigoLivro"] + "",
+                                dr["tituloLivro"] + "",
+                                dr["autorLivro"] + ""
+                                );
+                                listaLivros.Add(livro);
+                            }
+                        }
+                        return listaLivros;
+                    }
                 }
-                return livro;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Erro ao acessar cadastros " + ex.Message);
             }
-
         }
+
         public void InsertLivro(Livro qualLivro)
         {
             try
             {
-                String sql = "INSERT INTO Livro " +
+                String sql = "INSERT INTO bibLivro " +
                              " (codigoLivro, tituloLivro, autorLivro) " +
-                             " VALUES (@codigo,@titulo, @autor) ";
+                             " VALUES (@codigo,@titulo,@autor) ";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -162,11 +174,12 @@ namespace DAL
                 _conexao.Close();
             }
         }
+
         public void DeleteLivro(Livro qualLivro)
         {
             try
             {
-                String sql = "DELETE FROM Livro WHERE idLIvro = @idLivro ";
+                String sql = "DELETE FROM bibLivro WHERE idLIvro = @idLivro ";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -184,11 +197,12 @@ namespace DAL
             }
 
         }
+
         public void UpdateLivro(Livro qualLivro)
         {
             try
             {
-                String sql = "UPDATE Livro " +
+                String sql = "UPDATE bibLivro " +
                              " SET tituloLivro= @titulo ," +
                              " codigoLivro=@codigo," +
                              " autorLivro=@autor " +

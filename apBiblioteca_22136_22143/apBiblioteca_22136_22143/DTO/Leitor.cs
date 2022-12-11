@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    /*
+        DTO é uma sigla para Data Transfer Object (Objeto de Transferência de Dados).
+        DTO é um padrão de projeto de software usado para transferir dados entre subsistemas de um
+        software. DTOs são frequentemente usados em conjunção com objetos da camada de acesso a dados
+        para obter e armazenar dados de um banco de dados.
+    */
+
     public class Leitor
     {
-        public const int tamanhoNome = 50,
+        public const int tamanhoNome     = 50,
                          tamanhoTelefone = 20,
-                         tamanhoEmail = 50,
+                         tamanhoEmail    = 50,
                          tamanhoEndereco = 100;
         int idLeitor;
         string nomeLeitor;
@@ -39,6 +46,7 @@ namespace DTO
                     value = value.Remove(tamanhoNome);
                 else
                     value = value.PadRight(tamanhoNome, ' ');
+
                 // armazena o valor passado no atributo de destino
                 nomeLeitor = value;
             }
@@ -52,8 +60,10 @@ namespace DTO
                 // remove qualquer caracter além do tamanho máximo do campo
                 if (value.Length > tamanhoTelefone)
                     value = value.Remove(tamanhoTelefone);
-                // preenche título com espaços à direita até completar o tamanho mãximo
-                value = value.PadRight(tamanhoTelefone, ' ');
+                else
+                    // preenche título com espaços à direita até completar o tamanho mãximo
+                    value = value.PadRight(tamanhoTelefone, ' ');
+
                 // armazena o valor passado no atributo de destino
                 telefoneLeitor = value;
             }
@@ -70,8 +80,10 @@ namespace DTO
                 // remove qualquer caracter além do tamanho máximo do campo
                 if (value.Length > tamanhoEmail)
                     value = value.Remove(tamanhoEmail);
-                // preenche título com espaços à direita até completar o tamanho mãximo
-                value = value.PadRight(tamanhoEmail, ' ');
+                else
+                    // preenche título com espaços à direita até completar o tamanho mãximo
+                    value = value.PadRight(tamanhoEmail, ' ');
+
                 // armazena o valor passado no atributo de destino
                 emailLeitor = value;
             }
@@ -88,8 +100,10 @@ namespace DTO
                 // remove qualquer caracter além do tamanho máximo do campo
                 if (value.Length > tamanhoEndereco)
                     value = value.Remove(tamanhoEndereco);
-                // preenche título com espaços à direita até completar o tamanho mãximo
-                value = value.PadRight(tamanhoEndereco, ' ');
+                else
+                    // preenche título com espaços à direita até completar o tamanho mãximo
+                    value = value.PadRight(tamanhoEndereco, ' ');
+
                 // armazena o valor passado no atributo de destino
                 enderecoLeitor = value;
             }
@@ -97,10 +111,10 @@ namespace DTO
 
         public Leitor(int id, string nome, string telefone, string email, string endereco)
         {
-            IdLeitor = id;
-            EmailLeitor = email;
+            IdLeitor       = id;
+            EmailLeitor    = email;
             TelefoneLeitor = telefone;
-            NomeLeitor = nome;
+            NomeLeitor     = nome;
             EnderecoLeitor = endereco;
         }
     }
