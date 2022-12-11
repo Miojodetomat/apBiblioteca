@@ -9,6 +9,12 @@ using DTO;
 
 namespace DAL
 {
+    /*
+        A camada Data Access Layer (DAL) claramente separa a lógica de
+        acesso aos dados da lógica de apresentação (formulário Windows,
+        Formulário Web ou dispositivo móvel).
+    */
+
     public class EmprestimoDAL
     {
         string _conexaoSQLServer = "";
@@ -157,14 +163,52 @@ namespace DAL
             }
         }
 
+        public List<Emprestimo> SelectListaDeEmprestimosPorId(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conexaoSQLServer))
+                {
+                    using (SqlCommand command =
+                    new SqlCommand("SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal " +
+                                   " FROM bibEmprestimo WHERE idEmprestimo LIKE @id ", conn))
+                    {
+                        conn.Open();
+                        command.Parameters.AddWithValue("@id", '%'+id+'%');
+                        List<Emprestimo> listaEmprestimos = new List<Emprestimo>();
+                        using (SqlDataReader dr = command.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                Emprestimo emprestimo = new Emprestimo(
+                                (int)dr["idEmprestimo"],
+                                (int)dr["idLivro"],
+                                (int)dr["idLeitor"],
+                                Convert.ToDateTime(dr["dataEmprestimo"]),
+                                Convert.ToDateTime(dr["dataDevolucaoPrevista"]),
+                                Convert.ToDateTime(dr["dataDevolucaoReal"])
+                                );
+                                listaEmprestimos.Add(emprestimo);
+                            }
+                        }
+                        return listaEmprestimos;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao acessar emprestimos " + ex.Message);
+            }
+        }
+
         public DataTable SelectEmprestimosPendentes()
         {
             try
             {
                 String sql = "SELECT idEmprestimo, nomeLeitor, tituloLivro," +
-                    " dataEmprestimo, dataDevolucaoPrevista FROM " +
-                    " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
-                    " bibLeitor T on idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NULL";
+                             " dataEmprestimo, dataDevolucaoPrevista FROM " +
+                             " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
+                             " bibLeitor T on idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NULL";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -185,9 +229,9 @@ namespace DAL
             try
             {
                 String sql = "SELECT idEmprestimo, nomeLeitor, tituloLivro," +
-                    " dataEmprestimo, dataDevolucaoPrevista FROM " +
-                    " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
-                    " bibLeitor T on E.idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NOT NULL";
+                             " dataEmprestimo, dataDevolucaoPrevista FROM " +
+                             " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
+                             " bibLeitor T on E.idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NOT NULL";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);

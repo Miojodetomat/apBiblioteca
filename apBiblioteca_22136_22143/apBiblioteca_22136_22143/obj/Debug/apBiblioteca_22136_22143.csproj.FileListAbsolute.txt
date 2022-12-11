@@ -56,3 +56,7 @@ C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\ob
 C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.exe
 C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.pdb
 >>>>>>> ea710f099d8062915f928018a5705273aedb6e51
+C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelDevolvidos.resources
+C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelEmpPendentes.resources
+C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelLeitor.resources
+C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelLivros.resources

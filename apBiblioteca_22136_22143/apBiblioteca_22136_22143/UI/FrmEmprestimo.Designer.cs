@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tpDevolucao = new System.Windows.Forms.TabPage();
+            this.btnProcurarDev = new System.Windows.Forms.Button();
             this.dtEmpDev = new System.Windows.Forms.DateTimePicker();
             this.dtDevReal = new System.Windows.Forms.DateTimePicker();
             this.btnAtualizar = new System.Windows.Forms.Button();
@@ -58,19 +59,18 @@
             this.txtIdEmprestimoDev = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tpListaEmprestimos = new System.Windows.Forms.TabPage();
-            this.dgvEmprestimos = new System.Windows.Forms.DataGridView();
+            this.dgvListaEmprestimos = new System.Windows.Forms.DataGridView();
             this.idEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLivro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDevolucaoPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDevolucaoReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnProcurarDev = new System.Windows.Forms.Button();
             this.tcEmprestimos.SuspendLayout();
             this.tpEmprestimo.SuspendLayout();
             this.tpDevolucao.SuspendLayout();
             this.tpListaEmprestimos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmprestimos)).BeginInit();
             this.SuspendLayout();
             // 
             // tcEmprestimos
@@ -202,6 +202,7 @@
             // 
             this.txtIdEmprestimo.Location = new System.Drawing.Point(281, 31);
             this.txtIdEmprestimo.Name = "txtIdEmprestimo";
+            this.txtIdEmprestimo.ReadOnly = true;
             this.txtIdEmprestimo.Size = new System.Drawing.Size(117, 30);
             this.txtIdEmprestimo.TabIndex = 5;
             // 
@@ -264,13 +265,25 @@
             this.tpDevolucao.Controls.Add(this.label7);
             this.tpDevolucao.Controls.Add(this.txtIdEmprestimoDev);
             this.tpDevolucao.Controls.Add(this.label6);
-            this.tpDevolucao.Location = new System.Drawing.Point(4, 34);
+            this.tpDevolucao.Location = new System.Drawing.Point(4, 25);
             this.tpDevolucao.Name = "tpDevolucao";
             this.tpDevolucao.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDevolucao.Size = new System.Drawing.Size(798, 324);
+            this.tpDevolucao.Size = new System.Drawing.Size(798, 333);
             this.tpDevolucao.TabIndex = 2;
             this.tpDevolucao.Text = "Devolução";
             this.tpDevolucao.UseVisualStyleBackColor = true;
+            // 
+            // btnProcurarDev
+            // 
+            this.btnProcurarDev.BackColor = System.Drawing.Color.Silver;
+            this.btnProcurarDev.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnProcurarDev.Location = new System.Drawing.Point(538, 34);
+            this.btnProcurarDev.Name = "btnProcurarDev";
+            this.btnProcurarDev.Size = new System.Drawing.Size(77, 35);
+            this.btnProcurarDev.TabIndex = 20;
+            this.btnProcurarDev.Text = "Procurar";
+            this.btnProcurarDev.UseVisualStyleBackColor = false;
+            this.btnProcurarDev.Click += new System.EventHandler(this.btnProcurarDev_Click);
             // 
             // dtEmpDev
             // 
@@ -369,7 +382,7 @@
             // 
             // tpListaEmprestimos
             // 
-            this.tpListaEmprestimos.Controls.Add(this.dgvEmprestimos);
+            this.tpListaEmprestimos.Controls.Add(this.dgvListaEmprestimos);
             this.tpListaEmprestimos.Location = new System.Drawing.Point(4, 25);
             this.tpListaEmprestimos.Name = "tpListaEmprestimos";
             this.tpListaEmprestimos.Padding = new System.Windows.Forms.Padding(3);
@@ -378,21 +391,22 @@
             this.tpListaEmprestimos.Text = "Lista";
             this.tpListaEmprestimos.UseVisualStyleBackColor = true;
             // 
-            // dgvEmprestimos
+            // dgvListaEmprestimos
             // 
-            this.dgvEmprestimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmprestimos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListaEmprestimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaEmprestimos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idEmprestimo,
             this.idLeitor,
             this.idLivro,
             this.dataEmprestimo,
             this.dataDevolucaoPrevista,
             this.dataDevolucaoReal});
-            this.dgvEmprestimos.Location = new System.Drawing.Point(-4, 0);
-            this.dgvEmprestimos.Name = "dgvEmprestimos";
-            this.dgvEmprestimos.RowHeadersWidth = 51;
-            this.dgvEmprestimos.Size = new System.Drawing.Size(802, 329);
-            this.dgvEmprestimos.TabIndex = 0;
+            this.dgvListaEmprestimos.Location = new System.Drawing.Point(-4, 0);
+            this.dgvListaEmprestimos.Name = "dgvListaEmprestimos";
+            this.dgvListaEmprestimos.RowHeadersWidth = 51;
+            this.dgvListaEmprestimos.Size = new System.Drawing.Size(802, 329);
+            this.dgvListaEmprestimos.TabIndex = 0;
+            this.dgvListaEmprestimos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaEmprestimos_CellDoubleClick);
             // 
             // idEmprestimo
             // 
@@ -439,18 +453,6 @@
             this.dataDevolucaoReal.Name = "dataDevolucaoReal";
             this.dataDevolucaoReal.Width = 150;
             // 
-            // btnProcurarDev
-            // 
-            this.btnProcurarDev.BackColor = System.Drawing.Color.Silver;
-            this.btnProcurarDev.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProcurarDev.Location = new System.Drawing.Point(538, 34);
-            this.btnProcurarDev.Name = "btnProcurarDev";
-            this.btnProcurarDev.Size = new System.Drawing.Size(77, 35);
-            this.btnProcurarDev.TabIndex = 20;
-            this.btnProcurarDev.Text = "Procurar";
-            this.btnProcurarDev.UseVisualStyleBackColor = false;
-            this.btnProcurarDev.Click += new System.EventHandler(this.btnProcurarDev_Click);
-            // 
             // FrmEmprestimos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -458,14 +460,14 @@
             this.Controls.Add(this.tcEmprestimos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Name = "FrmEmprestimos";
-            this.Text = "FrmEmprestimo";
+            this.Text = "Manutenção de empréstimos e devoluções da biblioteca";
             this.tcEmprestimos.ResumeLayout(false);
             this.tpEmprestimo.ResumeLayout(false);
             this.tpEmprestimo.PerformLayout();
             this.tpDevolucao.ResumeLayout(false);
             this.tpDevolucao.PerformLayout();
             this.tpListaEmprestimos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmprestimos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,7 +490,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tpListaEmprestimos;
-        private System.Windows.Forms.DataGridView dgvEmprestimos;
+        private System.Windows.Forms.DataGridView dgvListaEmprestimos;
         private System.Windows.Forms.TabPage tpDevolucao;
         private System.Windows.Forms.TextBox txtIdLeitorDev;
         private System.Windows.Forms.TextBox txtIdLivroDev;

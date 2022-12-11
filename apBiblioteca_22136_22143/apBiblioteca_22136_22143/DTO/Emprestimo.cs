@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    /*
+        DTO é uma sigla para Data Transfer Object (Objeto de Transferência de Dados).
+        DTO é um padrão de projeto de software usado para transferir dados entre subsistemas de um
+        software. DTOs são frequentemente usados em conjunção com objetos da camada de acesso a dados
+        para obter e armazenar dados de um banco de dados.
+    */
+
     public class Emprestimo
     {
         int idEmprestimo;
@@ -80,12 +87,12 @@ namespace DTO
 
         public Emprestimo(int idEmprestimo, int idLivro, int idLeitor, DateTime dataEmprestimo, DateTime dataDevolucaoPrevista, DateTime dataDevolucaoReal)
         {
-            IdEmprestimo = idEmprestimo;
-            IdLivro = idLivro;
-            IdLeitor = idLeitor;
-            DataEmprestimo = dataEmprestimo;
+            IdEmprestimo          = idEmprestimo;
+            IdLivro               = idLivro;
+            IdLeitor              = idLeitor;
+            DataEmprestimo        = dataEmprestimo;
             DataDevolucaoPrevista = dataDevolucaoPrevista;
-            DataDevolucaoReal = dataDevolucaoReal;
+            DataDevolucaoReal     = dataDevolucaoReal;
         }
     }
 }

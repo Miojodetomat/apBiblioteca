@@ -8,6 +8,13 @@ using DTO;
 
 namespace BLL
 {
+    /*
+        A Camada de Lógica de Negócio (BLL) conterá uma classe para cada uma das tabela TableAdapter
+        da camada DAL. Cada uma dessas classes da BLL terão métodos para recuperar, inserir, atualizar
+        e remover registros da respectiva TableAdapter da DAL, aplicando as regras de negócio apropriadas
+        para que o funcionamento correto do programa seja garantido.
+    */
+
     public class EmprestimoBLL
     {
         DAL.EmprestimoDAL dal = null;
@@ -155,6 +162,19 @@ namespace BLL
             {
                 dal = new DAL.EmprestimoDAL(banco, usuario, senha);
                 return dal.SelectEmprestimoById(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Emprestimo> SelecionarEmprestimosPorId(int id)
+        {
+            try
+            {
+                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                return dal.SelectListaDeEmprestimosPorId(id);
             }
             catch (Exception ex)
             {
