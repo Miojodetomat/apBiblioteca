@@ -100,6 +100,29 @@ namespace DAL
             }
         }
 
+        public DataTable SelectEmprestimoByLivro(int idLivro)
+        {
+            try
+            {
+                String sql = "SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista " +
+                             "FROM bibEmprestimo " +
+                             "Where idLivro = @id";
+
+                _conexao = new SqlConnection(_conexaoSQLServer);
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@id", idLivro);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Emprestimo SelectEmprestimoById(int idDesejado)
         {
             try
@@ -127,6 +150,52 @@ namespace DAL
                                 );
                 }
                 return emprestimo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable SelectEmprestimosPendentes()
+        {
+            try
+            {
+                String sql = "SELECT idEmprestimo, nomeLeitor, tituloLivro," +
+                    " dataEmprestimo, dataDevolucaoPrevista FROM " +
+                    " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
+                    " bibLeitor T on idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NULL";
+
+                _conexao = new SqlConnection(_conexaoSQLServer);
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable SelectEmprestimosDevolvidos()
+        {
+            try
+            {
+                String sql = "SELECT idEmprestimo, nomeLeitor, tituloLivro," +
+                    " dataEmprestimo, dataDevolucaoPrevista FROM " +
+                    " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
+                    " bibLeitor T on E.idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NOT NULL";
+
+                _conexao = new SqlConnection(_conexaoSQLServer);
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
             }
             catch (Exception ex)
             {

@@ -18,6 +18,10 @@ namespace apBiblioteca_22136_22143
         UI.FrmLivros formLivros = null;
         UI.FrmLeitores formLeitores = null;
         UI.FrmEmprestimos formEmprestimo = null;
+        UI.FrmRelEmpPendentes formRelPendentes = null;
+        UI.FrmRelDevolvidos formRelDevolvidos = null;
+        UI.FrmRelLivros formRelLivros = null;
+        UI.FrmRelLeitor formRelLeitor = null;
 
         public FrmPrincipal()
         {
@@ -82,6 +86,62 @@ namespace apBiblioteca_22136_22143
                 formEmprestimo.senha = txtSenha.Text;
                 formEmprestimo.usuario = txtUsuario.Text;
                 formEmprestimo.Show();
+            }
+        }
+
+        private void pendentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
+                MessageBox.Show("Preencha os dados de conexão!");
+            else
+            {
+                formRelPendentes = new UI.FrmRelEmpPendentes();
+                formRelPendentes.banco = txtBanco.Text;
+                formRelPendentes.senha = txtSenha.Text;
+                formRelPendentes.usuario = txtUsuario.Text;
+                formRelPendentes.Show();
+            }
+        }
+
+        private void devolvidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
+                MessageBox.Show("Preencha os dados de conexão!");
+            else
+            {
+                formRelDevolvidos = new UI.FrmRelDevolvidos();
+                formRelDevolvidos.banco = txtBanco.Text;
+                formRelDevolvidos.senha = txtSenha.Text;
+                formRelDevolvidos.usuario = txtUsuario.Text;
+                formRelDevolvidos.Show();
+            }
+        }
+
+        private void pLeitorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
+                MessageBox.Show("Preencha os dados de conexão!");
+            else
+            {
+                formRelLivros = new UI.FrmRelLivros();
+                formRelLivros.banco = txtBanco.Text;
+                formRelLivros.senha = txtSenha.Text;
+                formRelLivros.usuario = txtUsuario.Text;
+                formRelLivros.Show();
+            }
+        }
+
+        private void pLivroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (txtBanco.Text == "" || txtUsuario.Text == "" || txtSenha.Text == "")
+                MessageBox.Show("Preencha os dados de conexão!");
+            else
+            {
+                formRelLeitor = new UI.FrmRelLeitor();
+                formRelLeitor.banco = txtBanco.Text;
+                formRelLeitor.senha = txtSenha.Text;
+                formRelLeitor.usuario = txtUsuario.Text;
+                formRelLeitor.Show();
             }
         }
     }

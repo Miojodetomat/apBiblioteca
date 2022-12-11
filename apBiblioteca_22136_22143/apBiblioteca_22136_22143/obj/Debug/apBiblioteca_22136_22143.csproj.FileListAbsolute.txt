@@ -24,3 +24,18 @@ Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debu
 Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.exe
 Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.pdb
 Z:\BD II\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmEmprestimos.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\bin\Debug\apBiblioteca_22136_22143.exe.config
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\bin\Debug\apBiblioteca_22136_22143.exe
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\bin\Debug\apBiblioteca_22136_22143.pdb
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.FrmPrincipal.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmEmprestimos.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmLeitores.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmLivros.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.Properties.Resources.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.exe
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.pdb
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelEmpPendentes.resources

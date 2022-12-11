@@ -22,7 +22,7 @@ namespace apBiblioteca_22136_22143.UI
         {
             InitializeComponent();
             if(operacao == DEVOLUCAO)
-                tpDevolucao.Focus();
+                tcEmprestimos.SelectTab(tpDevolucao);
         }
 
         public FrmEmprestimos()
@@ -32,7 +32,7 @@ namespace apBiblioteca_22136_22143.UI
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Emprestimo emprestimo = new Emprestimo(0, int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
+            Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimo.Text), int.Parse(txtIdLivro.Text), int.Parse(txtIdLeitor.Text),
                                                    dtEmp.Value, dtDevPrev.Value, dtDevPrev.Value);
             try
             {
@@ -66,7 +66,22 @@ namespace apBiblioteca_22136_22143.UI
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                dgvEmprestimos.DataSource = bll.SelecionarEmprestimos();
+                DataTable listaEmprestimo = bll.SelecionarEmprestimos();
+                dgvEmprestimos.Rows.Clear();
+                
+                for(int i = 0; i < listaEmprestimo.Rows.Count; i++)
+                {
+                    if (i != listaEmprestimo.Rows.Count - 1)
+                        dgvEmprestimos.Rows.Add();
+
+                    dgvEmprestimos[0, i].Value = listaEmprestimo.Rows[i][0];
+                    dgvEmprestimos[1, i].Value = listaEmprestimo.Rows[i][1];
+                    dgvEmprestimos[2, i].Value = listaEmprestimo.Rows[i][2];
+                    dgvEmprestimos[3, i].Value = listaEmprestimo.Rows[i][3];
+                    dgvEmprestimos[4, i].Value = listaEmprestimo.Rows[i][4];
+                    dgvEmprestimos[5, i].Value = listaEmprestimo.Rows[i][5];
+                }
+
                 tcEmprestimos.SelectTab(tpListaEmprestimos);
             }
             catch (Exception ex)
@@ -90,12 +105,25 @@ namespace apBiblioteca_22136_22143.UI
             }
         }
 
+        private void btnProcurarDev_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
+                Emprestimo emp = bll.ListarEmprestimoPorId(int.Parse(txtIdEmprestimoDev.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Erro : " + ex.Message.ToString());
+            }
+        }
+
         private void btnProcurar_Click(object sender, EventArgs e)
         {
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                dgvEmprestimos.DataSource = bll.SelecionarEmprestimosPorLeitor(int.Parse(txtIdLeitor.Text));
+                Emprestimo emp = bll.ListarEmprestimoPorId(int.Parse(txtIdEmprestimo.Text));
             }
             catch (Exception ex)
             {
