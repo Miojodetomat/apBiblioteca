@@ -60,3 +60,6 @@ C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\ob
 C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelEmpPendentes.resources
 C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelLeitor.resources
 C:\Users\dudap\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelLivros.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelDevolvidos.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelLeitor.resources
+C:\Users\Usuario\Documents\Cotuca\2022\2_Sem\BD2\apBiblioteca\apBiblioteca_22136_22143\apBiblioteca_22136_22143\obj\Debug\apBiblioteca_22136_22143.UI.FrmRelLivros.resources

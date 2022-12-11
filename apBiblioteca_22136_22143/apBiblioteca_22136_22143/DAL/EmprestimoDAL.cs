@@ -253,7 +253,7 @@ namespace DAL
             {
                 String sql = "INSERT INTO bibEmprestimo " +
                              " (idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal) " +
-                             " VALUES (@idLiv,@, @idLei, @dE, @dDP, @dDR) ";
+                             " VALUES (@idLiv, @idLei, @dE, @dDP, @dDR) ";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -265,7 +265,7 @@ namespace DAL
                 _conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception ex)   
             {
                 throw ex;
             }
