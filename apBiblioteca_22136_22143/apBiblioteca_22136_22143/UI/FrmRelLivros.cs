@@ -27,6 +27,7 @@ namespace apBiblioteca_22136_22143.UI
             else
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
+                LeitorBLL leitorBLL = new LeitorBLL(banco, usuario, senha);
                 DataTable lista = bll.SelecionarEmprestimosPorLivro(int.Parse(txtIdLivro.Text));
                 dgvRelLivros.Rows.Clear();
                 for(int i = 0; i < lista.Rows.Count; i++)
@@ -34,9 +35,13 @@ namespace apBiblioteca_22136_22143.UI
                     if (i != lista.Rows.Count - 1)
                         dgvRelLivros.Rows.Add();
 
+                    Leitor leitor = leitorBLL.ListarLeitorPorId((int)lista.Rows[i][2]);
+                    if (leitor == null)
+                        break;
+
                     dgvRelLivros[0, i].Value = lista.Rows[i][0];
                     dgvRelLivros[1, i].Value = lista.Rows[i][1];
-                    dgvRelLivros[2, i].Value = lista.Rows[i][2];
+                    dgvRelLivros[2, i].Value = leitor.NomeLeitor;
                     dgvRelLivros[3, i].Value = lista.Rows[i][3];
                     dgvRelLivros[4, i].Value = lista.Rows[i][4];
                 }

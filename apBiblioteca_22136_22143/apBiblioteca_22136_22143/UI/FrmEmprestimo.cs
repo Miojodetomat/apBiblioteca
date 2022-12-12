@@ -119,7 +119,7 @@ namespace apBiblioteca_22136_22143.UI
             // pede que o usuário insira um id, já que para procurar um
             // empréstimo é preciso o seu id
             if (txtIdEmprestimo.Text == "")
-                MessageBox.Show("Preencha como o id que deseja");
+                MessageBox.Show("Digite o id que deseja");
 
             List<Emprestimo> emprestimos = null;
 
@@ -153,25 +153,27 @@ namespace apBiblioteca_22136_22143.UI
             // caso os campos não estejam todos preenchidos, o programa alertará o usuário
             if (txtIdLivro.Text == "" || txtIdLeitor.Text == "" || dtEmp.Value.Equals("") || dtDevPrev.Value.Equals(""))
                 MessageBox.Show("Preencha todos os campos!");
-
-            try
+            else
             {
-                // inclui um novo empréstimo com os dados passados pelo usuário
-                EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                bll.IncluirEmprestimo(emprestimo);
-                MessageBox.Show("Emprestimo incluido com sucesso!");
+                try
+                {
+                    // inclui um novo empréstimo com os dados passados pelo usuário
+                    EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
+                    bll.IncluirEmprestimo(emprestimo);
+                    MessageBox.Show("Emprestimo incluido com sucesso!");
 
-                List<Emprestimo> listaEmprestimo = bll.SelecionarEmprestimosPorId(int.Parse(txtIdEmprestimo.Text));
+                    List<Emprestimo> listaEmprestimo = bll.ListarEmprestimos();
 
-                // inclui um id (identity) para o empréstimo que está sendo adicionado ao banco
-                if (listaEmprestimo.Count == 1)
-                    txtIdLeitor.Text = listaEmprestimo[0].IdLeitor.ToString();
-                else
-                    txtIdLeitor.Text = listaEmprestimo[listaEmprestimo.Count - 1].IdLeitor.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(" Erro : " + ex.Message.ToString());
+                    // inclui um id (identity) para o empréstimo que está sendo adicionado ao banco
+                    if (listaEmprestimo.Count == 1)
+                        txtIdEmprestimo.Text = listaEmprestimo[0].IdEmprestimo.ToString();
+                    else
+                        txtIdEmprestimo.Text = listaEmprestimo[listaEmprestimo.Count - 1].IdEmprestimo.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" Erro : " + ex.Message.ToString());
+                }
             }
         }
 
@@ -180,11 +182,11 @@ namespace apBiblioteca_22136_22143.UI
             // permite que o usuário altere o que está nos campos para instanciar
             // um empréstimo e devolução com as novas informações
             Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimoDev.Text), int.Parse(txtIdLivroDev.Text),
-                                                   int.Parse(txtIdLeitorDev.Text), dtEmp.Value, dtDevPrev.Value, dtDevReal.Value);
+                                                   int.Parse(txtIdLeitorDev.Text), dtEmpDev.Value, dtDevPrev.Value, dtDevReal.Value);
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                bll.AlterarEmprestimo(emprestimo);
+                bll.AlterarDevolucao(emprestimo);
                 MessageBox.Show("Devolução atualizada com sucesso!");
             }
             catch (Exception ex)
@@ -219,10 +221,25 @@ namespace apBiblioteca_22136_22143.UI
 
         private void btnProcurarDev_Click(object sender, EventArgs e)
         {
+            // pede que o usuário insira um id, já que para procurar um
+            // empréstimo é preciso o seu id
+            if (txtIdEmprestimoDev.Text == "")
+                MessageBox.Show("Digite o id que deseja");
+
+            List<Emprestimo> emprestimos = null;
+
             try
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                Emprestimo emp = bll.ListarEmprestimoPorId(int.Parse(txtIdEmprestimoDev.Text));
+                emprestimos = bll.SelecionarEmprestimosPorId(int.Parse(txtIdEmprestimoDev.Text));
+
+                // procura na lista retornada as respectivas informações
+                // que fazem jus ao id procurado
+                txtIdEmprestimoDev.Text = emprestimos[0].IdEmprestimo.ToString();
+                txtIdLeitorDev.Text = emprestimos[0].IdLeitor.ToString();
+                txtIdLivroDev.Text = emprestimos[0].IdLivro.ToString();
+                dtEmpDev.Text = emprestimos[0].DataEmprestimo.ToString();
+                dtDevReal.Text = emprestimos[0].DataDevolucaoReal.ToString();
             }
             catch (Exception ex)
             {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DTO;
 
 namespace apBiblioteca_22136_22143.UI
 {
@@ -26,6 +27,7 @@ namespace apBiblioteca_22136_22143.UI
             else
             {
                 EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
+                LivroBLL livroBLL = new LivroBLL(banco, usuario, senha);
                 DataTable lista = bll.SelecionarEmprestimosPorLeitor(int.Parse(txtIdLeitor.Text));
                 dgvLeitores.Rows.Clear();
                 for (int i = 0; i < lista.Rows.Count; i++)
@@ -33,9 +35,12 @@ namespace apBiblioteca_22136_22143.UI
                     if (i != lista.Rows.Count - 1)
                         dgvLeitores.Rows.Add();
 
+                    Livro livro = livroBLL.ListarLivroPorId((int)lista.Rows[i][1]);
+                    if (livro == null)
+                        break;
                     dgvLeitores[0, i].Value = lista.Rows[i][0];
-                    dgvLeitores[1, i].Value = lista.Rows[i][1];
-                    dgvLeitores[2, i].Value = lista.Rows[i][2];
+                    dgvLeitores[1, i].Value = lista.Rows[i][2];
+                    dgvLeitores[2, i].Value = livro.TituloLivro;
                     dgvLeitores[3, i].Value = lista.Rows[i][3];
                     dgvLeitores[4, i].Value = lista.Rows[i][4];
                 }

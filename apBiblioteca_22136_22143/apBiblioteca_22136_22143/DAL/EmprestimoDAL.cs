@@ -41,13 +41,22 @@ namespace DAL
                         {
                             while (dr.Read())
                             {
+                                DateTime dataDevolucaoReal;
+                                if (!(dr["dataDevolucaoReal"] is DBNull))
+                                {
+                                    DateTime dateTime = Convert.ToDateTime(dr["dataDevolucaoReal"]);
+                                    dataDevolucaoReal = dateTime;
+                                }
+                                else
+                                    dataDevolucaoReal = Convert.ToDateTime("01/01/01");
+
                                 Emprestimo emprestimo = new Emprestimo(
                                 (int)dr["idEmprestimo"],
                                 (int)dr["idLivro"],
                                 (int)dr["idLeitor"],
                                 Convert.ToDateTime(dr["dataEmprestimo"]),
                                 Convert.ToDateTime(dr["dataDevolucaoPrevista"]),
-                                Convert.ToDateTime(dr["dataDevolucaoReal"])
+                                dataDevolucaoReal
                                 );
                                 listaEmprestimos.Add(emprestimo);
                             }
@@ -146,13 +155,22 @@ namespace DAL
 
                 if (dr.Read())
                 {
+                    DateTime dataDevolucaoReal;
+                    if (!(dr["dataDevolucaoReal"] is DBNull))
+                    {
+                        DateTime dateTime = Convert.ToDateTime(dr["dataDevolucaoReal"]);
+                        dataDevolucaoReal = dateTime;
+                    }
+                    else
+                        dataDevolucaoReal = Convert.ToDateTime("01/01/01");
+
                     emprestimo = new Emprestimo(
                                 Convert.ToInt32(dr["idEmprestimo"]),
                                 Convert.ToInt32(dr["idLivro"]),
                                 Convert.ToInt32(dr["idLeitor"]),
                                 Convert.ToDateTime(dr["dataEmprestimo"]),
                                 Convert.ToDateTime(dr["dataDevolucaoPrevista"]),
-                                Convert.ToDateTime(dr["dataDevolucaoReal"])
+                                dataDevolucaoReal
                                 );
                 }
                 return emprestimo;
@@ -171,22 +189,31 @@ namespace DAL
                 {
                     using (SqlCommand command =
                     new SqlCommand("SELECT idEmprestimo,idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal " +
-                                   " FROM bibEmprestimo WHERE idEmprestimo LIKE @id ", conn))
+                                   " FROM bibEmprestimo WHERE idEmprestimo = @id ", conn))
                     {
                         conn.Open();
-                        command.Parameters.AddWithValue("@id", '%'+id+'%');
+                        command.Parameters.AddWithValue("@id",id);
                         List<Emprestimo> listaEmprestimos = new List<Emprestimo>();
                         using (SqlDataReader dr = command.ExecuteReader())
                         {
                             while (dr.Read())
                             {
+                                DateTime dataDevolucaoReal;
+                                if (!(dr["dataDevolucaoReal"] is DBNull))
+                                {
+                                    DateTime dateTime = Convert.ToDateTime(dr["dataDevolucaoReal"]);
+                                    dataDevolucaoReal = dateTime;
+                                }
+                                else
+                                    dataDevolucaoReal = Convert.ToDateTime("01/01/01");
+
                                 Emprestimo emprestimo = new Emprestimo(
                                 (int)dr["idEmprestimo"],
                                 (int)dr["idLivro"],
                                 (int)dr["idLeitor"],
                                 Convert.ToDateTime(dr["dataEmprestimo"]),
                                 Convert.ToDateTime(dr["dataDevolucaoPrevista"]),
-                                Convert.ToDateTime(dr["dataDevolucaoReal"])
+                                dataDevolucaoReal
                                 );
                                 listaEmprestimos.Add(emprestimo);
                             }
@@ -205,10 +232,10 @@ namespace DAL
         {
             try
             {
-                String sql = "SELECT idEmprestimo, nomeLeitor, tituloLivro," +
-                             " dataEmprestimo, dataDevolucaoPrevista FROM " +
+                String sql = "SELECT E.idEmprestimo, T.nomeLeitor, L.tituloLivro," +
+                             " E.dataEmprestimo, E.dataDevolucaoPrevista FROM " +
                              " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
-                             " bibLeitor T on idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NULL";
+                             " bibLeitor T on E.idLeitor = T.idLeitor WHERE E.dataDevolucaoReal IS NULL";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -231,7 +258,7 @@ namespace DAL
                 String sql = "SELECT idEmprestimo, nomeLeitor, tituloLivro," +
                              " dataEmprestimo, dataDevolucaoPrevista FROM " +
                              " (bibEmprestimo E JOIN bibLivro L on E.idLivro = L.idLivro) JOIN " +
-                             " bibLeitor T on E.idLeitor = T.idLeitor WHERE dataDevoucaoReal IS NOT NULL";
+                             " bibLeitor T on E.idLeitor = T.idLeitor WHERE dataDevolucaoReal IS NOT NULL";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -252,8 +279,8 @@ namespace DAL
             try
             {
                 String sql = "INSERT INTO bibEmprestimo " +
-                             " (idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista,dataDevolucaoReal) " +
-                             " VALUES (@idLiv, @idLei, @dE, @dDP, @dDR) ";
+                             " (idLivro,idLeitor,dataEmprestimo,dataDevolucaoPrevista) " +
+                             " VALUES (@idLiv, @idLei, @dE, @dDP) ";
 
                 _conexao = new SqlConnection(_conexaoSQLServer);
                 SqlCommand cmd = new SqlCommand(sql, _conexao);
@@ -261,11 +288,10 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idLei", qualEmprestimo.IdLeitor);
                 cmd.Parameters.AddWithValue("@dE", qualEmprestimo.DataEmprestimo);
                 cmd.Parameters.AddWithValue("@dDP", qualEmprestimo.DataDevolucaoPrevista);
-                cmd.Parameters.AddWithValue("@dDR", qualEmprestimo.DataDevolucaoReal);
                 _conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)   
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -298,6 +324,37 @@ namespace DAL
         }
 
         public void UpdateEmprestimo(Emprestimo qualEmprestimo)
+        {
+            try
+            {
+                String sql = "UPDATE bibEmprestimo " +
+                             " SET idLeitor= @idLei ," +
+                             " idLivro=@idLiv," +
+                             " dataEmprestimo=@dE, " +
+                             " dataDevolucaoPrevista=@dDP " +
+                             " WHERE idEmprestimo = @idEmprestimo ";
+
+                _conexao = new SqlConnection(_conexaoSQLServer);
+                SqlCommand cmd = new SqlCommand(sql, _conexao);
+                cmd.Parameters.AddWithValue("@idLei", qualEmprestimo.IdLeitor);
+                cmd.Parameters.AddWithValue("@idLiv", qualEmprestimo.IdLivro);
+                cmd.Parameters.AddWithValue("@dE", qualEmprestimo.DataEmprestimo);
+                cmd.Parameters.AddWithValue("@dDP", qualEmprestimo.DataDevolucaoPrevista);
+                cmd.Parameters.AddWithValue("@idEmprestimo", qualEmprestimo.IdEmprestimo);
+                _conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                _conexao.Close();
+            }
+        }
+
+        public void UpdateDevolucao(Emprestimo qualEmprestimo)
         {
             try
             {

@@ -130,6 +130,19 @@ namespace BLL
             }
         }
 
+        public void AlterarDevolucao(Emprestimo emprestimo)
+        {
+            try
+            {
+                dal = new DAL.EmprestimoDAL(banco, usuario, senha);
+                dal.UpdateDevolucao(emprestimo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void ExcluirEmprestimo(Emprestimo emprestimo)
         {
             try

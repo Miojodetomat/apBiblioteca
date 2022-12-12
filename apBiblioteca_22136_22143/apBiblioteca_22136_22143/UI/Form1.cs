@@ -123,11 +123,11 @@ namespace apBiblioteca_22136_22143
                 MessageBox.Show("Preencha os dados de conexão!");
             else
             {
-                formRelLivros = new UI.FrmRelLivros();
-                formRelLivros.banco = txtBanco.Text;
-                formRelLivros.senha = txtSenha.Text;
-                formRelLivros.usuario = txtUsuario.Text;
-                formRelLivros.Show();
+                formRelLeitor = new UI.FrmRelLeitor();
+                formRelLeitor.banco = txtBanco.Text;
+                formRelLeitor.senha = txtSenha.Text;
+                formRelLeitor.usuario = txtUsuario.Text;
+                formRelLeitor.Show();
             }
         }
 
@@ -137,11 +137,11 @@ namespace apBiblioteca_22136_22143
                 MessageBox.Show("Preencha os dados de conexão!");
             else
             {
-                formRelLeitor = new UI.FrmRelLeitor();
-                formRelLeitor.banco = txtBanco.Text;
-                formRelLeitor.senha = txtSenha.Text;
-                formRelLeitor.usuario = txtUsuario.Text;
-                formRelLeitor.Show();
+                formRelLivros = new UI.FrmRelLivros();
+                formRelLivros.banco = txtBanco.Text;
+                formRelLivros.senha = txtSenha.Text;
+                formRelLivros.usuario = txtUsuario.Text;
+                formRelLivros.Show();
             }
         }
     }

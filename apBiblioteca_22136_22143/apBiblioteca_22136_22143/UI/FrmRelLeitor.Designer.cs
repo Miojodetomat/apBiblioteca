@@ -36,10 +36,10 @@
             this.devolucaoPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tpDgvLeitores = new System.Windows.Forms.TabPage();
             this.btnExibir = new System.Windows.Forms.Button();
             this.lbIdLeitor = new System.Windows.Forms.Label();
             this.txtIdLeitor = new System.Windows.Forms.TextBox();
+            this.tpDgvLeitores = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -124,17 +124,6 @@
             this.tabPage1.Text = "Leitor";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tpDgvLeitores
-            // 
-            this.tpDgvLeitores.Controls.Add(this.dgvLeitores);
-            this.tpDgvLeitores.Location = new System.Drawing.Point(4, 25);
-            this.tpDgvLeitores.Name = "tpDgvLeitores";
-            this.tpDgvLeitores.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDgvLeitores.Size = new System.Drawing.Size(768, 397);
-            this.tpDgvLeitores.TabIndex = 1;
-            this.tpDgvLeitores.Text = "Relatório";
-            this.tpDgvLeitores.UseVisualStyleBackColor = true;
-            // 
             // btnExibir
             // 
             this.btnExibir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -150,7 +139,7 @@
             // 
             this.lbIdLeitor.AutoSize = true;
             this.lbIdLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbIdLeitor.Location = new System.Drawing.Point(60, 66);
+            this.lbIdLeitor.Location = new System.Drawing.Point(23, 66);
             this.lbIdLeitor.Name = "lbIdLeitor";
             this.lbIdLeitor.Size = new System.Drawing.Size(92, 25);
             this.lbIdLeitor.TabIndex = 4;
@@ -163,6 +152,17 @@
             this.txtIdLeitor.Name = "txtIdLeitor";
             this.txtIdLeitor.Size = new System.Drawing.Size(260, 30);
             this.txtIdLeitor.TabIndex = 3;
+            // 
+            // tpDgvLeitores
+            // 
+            this.tpDgvLeitores.Controls.Add(this.dgvLeitores);
+            this.tpDgvLeitores.Location = new System.Drawing.Point(4, 25);
+            this.tpDgvLeitores.Name = "tpDgvLeitores";
+            this.tpDgvLeitores.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDgvLeitores.Size = new System.Drawing.Size(768, 397);
+            this.tpDgvLeitores.TabIndex = 1;
+            this.tpDgvLeitores.Text = "Relatório";
+            this.tpDgvLeitores.UseVisualStyleBackColor = true;
             // 
             // FrmRelLeitor
             // 
