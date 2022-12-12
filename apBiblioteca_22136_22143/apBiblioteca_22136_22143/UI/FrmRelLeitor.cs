@@ -22,6 +22,9 @@ namespace apBiblioteca_22136_22143.UI
 
         private void btnExibir_Click(object sender, EventArgs e)
         {
+            // solicita ao usuário que digite o id (identity) gerado
+            // na inclusão do leitor para que possa gerar o relatório
+            // por meio daquele leitor
             if (txtIdLeitor.Text == "")
                 MessageBox.Show("Digite o id desejado");
             else
@@ -30,6 +33,7 @@ namespace apBiblioteca_22136_22143.UI
                 LivroBLL livroBLL = new LivroBLL(banco, usuario, senha);
                 DataTable lista = bll.SelecionarEmprestimosPorLeitor(int.Parse(txtIdLeitor.Text));
                 dgvLeitores.Rows.Clear();
+
                 for (int i = 0; i < lista.Rows.Count; i++)
                 {
                     if (i != lista.Rows.Count - 1)
@@ -44,6 +48,7 @@ namespace apBiblioteca_22136_22143.UI
                     dgvLeitores[3, i].Value = lista.Rows[i][3];
                     dgvLeitores[4, i].Value = lista.Rows[i][4];
                 }
+                tcRelatorioLeitores.SelectTab(tpDgvLeitores); // abre a tabela com o relatório
             }
         }
     }

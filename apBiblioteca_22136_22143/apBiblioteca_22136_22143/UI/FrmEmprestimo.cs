@@ -179,19 +179,25 @@ namespace apBiblioteca_22136_22143.UI
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            // permite que o usuário altere o que está nos campos para instanciar
-            // um empréstimo e devolução com as novas informações
-            Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimoDev.Text), int.Parse(txtIdLivroDev.Text),
-                                                   int.Parse(txtIdLeitorDev.Text), dtEmpDev.Value, dtDevPrev.Value, dtDevReal.Value);
-            try
+            if (txtIdEmprestimoDev.Text == "" || txtIdLeitorDev.Text == "" || txtIdLivroDev.Text == "")
+                MessageBox.Show("Preencha as informações corretamente para atualizar a devolução!");
+            else
             {
-                EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
-                bll.AlterarDevolucao(emprestimo);
-                MessageBox.Show("Devolução atualizada com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(" Erro : " + ex.Message.ToString());
+                // permite que o usuário altere o que está nos campos para instanciar
+                // um empréstimo e devolução com as novas informações
+                Emprestimo emprestimo = new Emprestimo(int.Parse(txtIdEmprestimoDev.Text), int.Parse(txtIdLivroDev.Text),
+                                                       int.Parse(txtIdLeitorDev.Text), dtEmpDev.Value, dtDevPrev.Value, dtDevReal.Value);
+
+                try
+                {
+                    EmprestimoBLL bll = new EmprestimoBLL(banco, usuario, senha);
+                    bll.AlterarDevolucao(emprestimo);
+                    MessageBox.Show("Devolução atualizada com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" Erro : " + ex.Message.ToString());
+                }
             }
         }
 

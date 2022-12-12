@@ -202,7 +202,6 @@
             // 
             this.txtIdEmprestimo.Location = new System.Drawing.Point(281, 31);
             this.txtIdEmprestimo.Name = "txtIdEmprestimo";
-            this.txtIdEmprestimo.ReadOnly = true;
             this.txtIdEmprestimo.Size = new System.Drawing.Size(117, 30);
             this.txtIdEmprestimo.TabIndex = 5;
             // 

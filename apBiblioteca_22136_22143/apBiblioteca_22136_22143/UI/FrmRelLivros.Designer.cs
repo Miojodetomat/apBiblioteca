@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tpBusca = new System.Windows.Forms.TabPage();
+            this.tcRelatorioLivros = new System.Windows.Forms.TabControl();
+            this.tpBuscaPorLivros = new System.Windows.Forms.TabPage();
             this.btnExibir = new System.Windows.Forms.Button();
             this.lbIdLivro = new System.Windows.Forms.Label();
             this.txtIdLivro = new System.Windows.Forms.TextBox();
@@ -40,37 +40,37 @@
             this.nomeLeitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDevolucaoPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1.SuspendLayout();
-            this.tpBusca.SuspendLayout();
+            this.tcRelatorioLivros.SuspendLayout();
+            this.tpBuscaPorLivros.SuspendLayout();
             this.tpRelatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRelLivros)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tcRelatorioLivros
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tcRelatorioLivros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tpBusca);
-            this.tabControl1.Controls.Add(this.tpRelatorio);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 426);
-            this.tabControl1.TabIndex = 0;
+            this.tcRelatorioLivros.Controls.Add(this.tpBuscaPorLivros);
+            this.tcRelatorioLivros.Controls.Add(this.tpRelatorio);
+            this.tcRelatorioLivros.Location = new System.Drawing.Point(12, 12);
+            this.tcRelatorioLivros.Name = "tcRelatorioLivros";
+            this.tcRelatorioLivros.SelectedIndex = 0;
+            this.tcRelatorioLivros.Size = new System.Drawing.Size(776, 426);
+            this.tcRelatorioLivros.TabIndex = 0;
             // 
-            // tpBusca
+            // tpBuscaPorLivros
             // 
-            this.tpBusca.Controls.Add(this.btnExibir);
-            this.tpBusca.Controls.Add(this.lbIdLivro);
-            this.tpBusca.Controls.Add(this.txtIdLivro);
-            this.tpBusca.Location = new System.Drawing.Point(4, 25);
-            this.tpBusca.Name = "tpBusca";
-            this.tpBusca.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBusca.Size = new System.Drawing.Size(768, 397);
-            this.tpBusca.TabIndex = 0;
-            this.tpBusca.Text = "Buscar";
-            this.tpBusca.UseVisualStyleBackColor = true;
+            this.tpBuscaPorLivros.Controls.Add(this.btnExibir);
+            this.tpBuscaPorLivros.Controls.Add(this.lbIdLivro);
+            this.tpBuscaPorLivros.Controls.Add(this.txtIdLivro);
+            this.tpBuscaPorLivros.Location = new System.Drawing.Point(4, 25);
+            this.tpBuscaPorLivros.Name = "tpBuscaPorLivros";
+            this.tpBuscaPorLivros.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpBuscaPorLivros.Size = new System.Drawing.Size(768, 397);
+            this.tpBuscaPorLivros.TabIndex = 0;
+            this.tpBuscaPorLivros.Text = "Buscar";
+            this.tpBuscaPorLivros.UseVisualStyleBackColor = true;
             // 
             // btnExibir
             // 
@@ -106,7 +106,7 @@
             this.tpRelatorio.Controls.Add(this.dgvRelLivros);
             this.tpRelatorio.Location = new System.Drawing.Point(4, 25);
             this.tpRelatorio.Name = "tpRelatorio";
-            this.tpRelatorio.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRelatorio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tpRelatorio.Size = new System.Drawing.Size(768, 397);
             this.tpRelatorio.TabIndex = 1;
             this.tpRelatorio.Text = "Relatório";
@@ -169,12 +169,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcRelatorioLivros);
             this.Name = "FrmRelLivros";
             this.Text = "FrmRelLivros";
-            this.tabControl1.ResumeLayout(false);
-            this.tpBusca.ResumeLayout(false);
-            this.tpBusca.PerformLayout();
+            this.tcRelatorioLivros.ResumeLayout(false);
+            this.tpBuscaPorLivros.ResumeLayout(false);
+            this.tpBuscaPorLivros.PerformLayout();
             this.tpRelatorio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRelLivros)).EndInit();
             this.ResumeLayout(false);
@@ -183,8 +183,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tpBusca;
+        private System.Windows.Forms.TabControl tcRelatorioLivros;
+        private System.Windows.Forms.TabPage tpBuscaPorLivros;
         private System.Windows.Forms.TabPage tpRelatorio;
         private System.Windows.Forms.Button btnExibir;
         private System.Windows.Forms.Label lbIdLivro;

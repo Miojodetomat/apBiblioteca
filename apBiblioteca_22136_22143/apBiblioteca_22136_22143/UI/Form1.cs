@@ -13,15 +13,23 @@ using DAL;
 
 namespace apBiblioteca_22136_22143
 {
+    /* 
+        Esse formulário apresenta todas as principais operações ou seja, as funções,
+        que o usuário poderá realizar durante o uso do programa. Aqui focamos, principalmente,
+        na conexão com o banco de dados. Caso a conexão feita seja incorreta ou não preenchida
+        corretamente, o programa alertará o usuário. Caso esteja conectado corretamente, o
+        usuário poderá fazer o uso pleno do programa.
+    */
+
     public partial class FrmPrincipal : Form
     {
-        UI.FrmLivros formLivros = null;
-        UI.FrmLeitores formLeitores = null;
-        UI.FrmEmprestimos formEmprestimo = null;
+        UI.FrmLivros formLivros                = null;
+        UI.FrmLeitores formLeitores            = null;
+        UI.FrmEmprestimos formEmprestimo       = null;
         UI.FrmRelEmpPendentes formRelPendentes = null;
-        UI.FrmRelDevolvidos formRelDevolvidos = null;
-        UI.FrmRelLivros formRelLivros = null;
-        UI.FrmRelLeitor formRelLeitor = null;
+        UI.FrmRelDevolvidos formRelDevolvidos  = null;
+        UI.FrmRelLivros formRelLivros          = null;
+        UI.FrmRelLeitor formRelLeitor          = null;
 
         public FrmPrincipal()
         {
@@ -40,9 +48,9 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formLivros = new UI.FrmLivros();
-                formLivros.banco = txtBanco.Text;
+                formLivros.banco   = txtBanco.Text;
                 formLivros.usuario = txtUsuario.Text;
-                formLivros.senha = txtSenha.Text;
+                formLivros.senha   = txtSenha.Text;
                 formLivros.Show();
             }
         }
@@ -54,9 +62,9 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formLeitores = new UI.FrmLeitores();
-                formLeitores.banco = txtBanco.Text;
+                formLeitores.banco   = txtBanco.Text;
                 formLeitores.usuario = txtUsuario.Text;
-                formLeitores.senha = txtSenha.Text;
+                formLeitores.senha   = txtSenha.Text;
                 formLeitores.Show();
             }
         }
@@ -68,8 +76,8 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formEmprestimo = new UI.FrmEmprestimos();
-                formEmprestimo.banco = txtBanco.Text;
-                formEmprestimo.senha = txtSenha.Text;
+                formEmprestimo.banco   = txtBanco.Text;
+                formEmprestimo.senha   = txtSenha.Text;
                 formEmprestimo.usuario = txtUsuario.Text;
                 formEmprestimo.Show();
             }
@@ -82,8 +90,8 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formEmprestimo = new UI.FrmEmprestimos(UI.FrmEmprestimos.DEVOLUCAO);
-                formEmprestimo.banco = txtBanco.Text;
-                formEmprestimo.senha = txtSenha.Text;
+                formEmprestimo.banco   = txtBanco.Text;
+                formEmprestimo.senha   = txtSenha.Text;
                 formEmprestimo.usuario = txtUsuario.Text;
                 formEmprestimo.Show();
             }
@@ -96,8 +104,8 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formRelPendentes = new UI.FrmRelEmpPendentes();
-                formRelPendentes.banco = txtBanco.Text;
-                formRelPendentes.senha = txtSenha.Text;
+                formRelPendentes.banco   = txtBanco.Text;
+                formRelPendentes.senha   = txtSenha.Text;
                 formRelPendentes.usuario = txtUsuario.Text;
                 formRelPendentes.Show();
             }
@@ -110,8 +118,8 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formRelDevolvidos = new UI.FrmRelDevolvidos();
-                formRelDevolvidos.banco = txtBanco.Text;
-                formRelDevolvidos.senha = txtSenha.Text;
+                formRelDevolvidos.banco   = txtBanco.Text;
+                formRelDevolvidos.senha   = txtSenha.Text;
                 formRelDevolvidos.usuario = txtUsuario.Text;
                 formRelDevolvidos.Show();
             }
@@ -124,8 +132,8 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formRelLeitor = new UI.FrmRelLeitor();
-                formRelLeitor.banco = txtBanco.Text;
-                formRelLeitor.senha = txtSenha.Text;
+                formRelLeitor.banco   = txtBanco.Text;
+                formRelLeitor.senha   = txtSenha.Text;
                 formRelLeitor.usuario = txtUsuario.Text;
                 formRelLeitor.Show();
             }
@@ -138,8 +146,8 @@ namespace apBiblioteca_22136_22143
             else
             {
                 formRelLivros = new UI.FrmRelLivros();
-                formRelLivros.banco = txtBanco.Text;
-                formRelLivros.senha = txtSenha.Text;
+                formRelLivros.banco   = txtBanco.Text;
+                formRelLivros.senha   = txtSenha.Text;
                 formRelLivros.usuario = txtUsuario.Text;
                 formRelLivros.Show();
             }

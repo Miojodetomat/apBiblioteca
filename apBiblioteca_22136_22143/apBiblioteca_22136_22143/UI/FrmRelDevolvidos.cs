@@ -23,6 +23,9 @@ namespace apBiblioteca_22136_22143.UI
                 DataTable lista = bll.SelecionarEmprestimosDevolvidos();
                 dgvDevolvidos.Rows.Clear();
 
+                // o for percorre todos os elementos da tabela e vai
+                // adicionando as informações do banco de dados em seus
+                // respectivos campos
                 for (int i = 0; i < lista.Rows.Count; i++)
                 {
                     if (i != lista.Rows.Count - 1)

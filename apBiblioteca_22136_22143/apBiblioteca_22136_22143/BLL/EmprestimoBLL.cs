@@ -24,9 +24,9 @@ namespace BLL
 
         public EmprestimoBLL(string banco, string usuario, string senha)
         {
-            this.banco = banco;
+            this.banco   = banco;
             this.usuario = usuario;
-            this.senha = senha;
+            this.senha   = senha;
         }
 
         public DataTable SelecionarEmprestimos()

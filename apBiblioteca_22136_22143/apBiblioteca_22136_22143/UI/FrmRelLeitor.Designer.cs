@@ -34,15 +34,15 @@
             this.nomeLivro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devolucaoPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tcRelatorioLeitores = new System.Windows.Forms.TabControl();
+            this.tpBuscaPorLeitor = new System.Windows.Forms.TabPage();
             this.btnExibir = new System.Windows.Forms.Button();
             this.lbIdLeitor = new System.Windows.Forms.Label();
             this.txtIdLeitor = new System.Windows.Forms.TextBox();
             this.tpDgvLeitores = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tcRelatorioLeitores.SuspendLayout();
+            this.tpBuscaPorLeitor.SuspendLayout();
             this.tpDgvLeitores.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,31 +98,31 @@
             this.devolucaoPrevista.Name = "devolucaoPrevista";
             this.devolucaoPrevista.Width = 125;
             // 
-            // tabControl1
+            // tcRelatorioLeitores
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tcRelatorioLeitores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tpDgvLeitores);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 426);
-            this.tabControl1.TabIndex = 1;
+            this.tcRelatorioLeitores.Controls.Add(this.tpBuscaPorLeitor);
+            this.tcRelatorioLeitores.Controls.Add(this.tpDgvLeitores);
+            this.tcRelatorioLeitores.Location = new System.Drawing.Point(12, 12);
+            this.tcRelatorioLeitores.Name = "tcRelatorioLeitores";
+            this.tcRelatorioLeitores.SelectedIndex = 0;
+            this.tcRelatorioLeitores.Size = new System.Drawing.Size(776, 426);
+            this.tcRelatorioLeitores.TabIndex = 1;
             // 
-            // tabPage1
+            // tpBuscaPorLeitor
             // 
-            this.tabPage1.Controls.Add(this.btnExibir);
-            this.tabPage1.Controls.Add(this.lbIdLeitor);
-            this.tabPage1.Controls.Add(this.txtIdLeitor);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 397);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Leitor";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpBuscaPorLeitor.Controls.Add(this.btnExibir);
+            this.tpBuscaPorLeitor.Controls.Add(this.lbIdLeitor);
+            this.tpBuscaPorLeitor.Controls.Add(this.txtIdLeitor);
+            this.tpBuscaPorLeitor.Location = new System.Drawing.Point(4, 25);
+            this.tpBuscaPorLeitor.Name = "tpBuscaPorLeitor";
+            this.tpBuscaPorLeitor.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBuscaPorLeitor.Size = new System.Drawing.Size(768, 397);
+            this.tpBuscaPorLeitor.TabIndex = 0;
+            this.tpBuscaPorLeitor.Text = "Leitor";
+            this.tpBuscaPorLeitor.UseVisualStyleBackColor = true;
             // 
             // btnExibir
             // 
@@ -169,13 +169,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcRelatorioLeitores);
             this.Name = "FrmRelLeitor";
             this.Text = "FrmRelLeitor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tcRelatorioLeitores.ResumeLayout(false);
+            this.tpBuscaPorLeitor.ResumeLayout(false);
+            this.tpBuscaPorLeitor.PerformLayout();
             this.tpDgvLeitores.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -189,8 +189,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeLivro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmprestimo;
         private System.Windows.Forms.DataGridViewTextBoxColumn devolucaoPrevista;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tcRelatorioLeitores;
+        private System.Windows.Forms.TabPage tpBuscaPorLeitor;
         private System.Windows.Forms.TabPage tpDgvLeitores;
         private System.Windows.Forms.Button btnExibir;
         private System.Windows.Forms.Label lbIdLeitor;
